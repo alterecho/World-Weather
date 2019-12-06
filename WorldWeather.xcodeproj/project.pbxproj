@@ -16,6 +16,7 @@
 		F1CAD33A23994FC500670B1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1CAD33823994FC500670B1C /* LaunchScreen.storyboard */; };
 		F1CAD34523994FC500670B1C /* WorldWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CAD34423994FC500670B1C /* WorldWeatherTests.swift */; };
 		F1CAD35023994FC500670B1C /* WorldWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CAD34F23994FC500670B1C /* WorldWeatherUITests.swift */; };
+		F1CAD35E2399D59700670B1C /* Mobile_developer_technical_test.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F1CAD35D2399D59700670B1C /* Mobile_developer_technical_test.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		F1CAD34B23994FC500670B1C /* WorldWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CAD34F23994FC500670B1C /* WorldWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldWeatherUITests.swift; sourceTree = "<group>"; };
 		F1CAD35123994FC500670B1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1CAD35D2399D59700670B1C /* Mobile_developer_technical_test.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Mobile_developer_technical_test.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		F1CAD32923994FC500670B1C /* WorldWeather */ = {
 			isa = PBXGroup;
 			children = (
+				F1CAD35F2399D5A500670B1C /* docs */,
 				F1CAD32A23994FC500670B1C /* AppDelegate.swift */,
 				F1CAD32C23994FC500670B1C /* SceneDelegate.swift */,
 				F1CAD32E23994FC500670B1C /* ViewController.swift */,
@@ -129,6 +132,14 @@
 				F1CAD35123994FC500670B1C /* Info.plist */,
 			);
 			path = WorldWeatherUITests;
+			sourceTree = "<group>";
+		};
+		F1CAD35F2399D5A500670B1C /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				F1CAD35D2399D59700670B1C /* Mobile_developer_technical_test.pdf */,
+			);
+			path = docs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1CAD33A23994FC500670B1C /* LaunchScreen.storyboard in Resources */,
+				F1CAD35E2399D59700670B1C /* Mobile_developer_technical_test.pdf in Resources */,
 				F1CAD33723994FC500670B1C /* Assets.xcassets in Resources */,
 				F1CAD33223994FC500670B1C /* Main.storyboard in Resources */,
 			);
