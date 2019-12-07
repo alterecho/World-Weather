@@ -32,6 +32,7 @@
 		F1E65D1C239BFA9A00AC289F /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D1B239BFA9A00AC289F /* Area.swift */; };
 		F1E65D1F239BFB7200AC289F /* SearchPageMappingWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D1E239BFB7200AC289F /* SearchPageMappingWorker.swift */; };
 		F1E65D22239C030900AC289F /* SearchPageConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D21239C030900AC289F /* SearchPageConfigurator.swift */; };
+		F1E65D24239C049600AC289F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D23239C049600AC289F /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		F1E65D1B239BFA9A00AC289F /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		F1E65D1E239BFB7200AC289F /* SearchPageMappingWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageMappingWorker.swift; sourceTree = "<group>"; };
 		F1E65D21239C030900AC289F /* SearchPageConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageConfigurator.swift; sourceTree = "<group>"; };
+		F1E65D23239C049600AC289F /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				F1CAD32A23994FC500670B1C /* AppDelegate.swift */,
 				F1E65D0B239B770600AC289F /* Helpers.swift */,
 				F1CAD32C23994FC500670B1C /* SceneDelegate.swift */,
+				F1E65D23239C049600AC289F /* API.swift */,
 				F1E65D1A239BF70700AC289F /* CitiesTableCell */,
 				F1E65D0D239BD48D00AC289F /* Search Page */,
 				F1E65D1D239BFAA000AC289F /* Models */,
@@ -371,6 +374,7 @@
 				F1E65D1F239BFB7200AC289F /* SearchPageMappingWorker.swift in Sources */,
 				F1CAD32B23994FC500670B1C /* AppDelegate.swift in Sources */,
 				F1CAD32D23994FC500670B1C /* SceneDelegate.swift in Sources */,
+				F1E65D24239C049600AC289F /* API.swift in Sources */,
 				F1E65D17239BF6C800AC289F /* CitiesTableCell.swift in Sources */,
 				F1E65D22239C030900AC289F /* SearchPageConfigurator.swift in Sources */,
 				F1E65D09239B757700AC289F /* Errors.swift in Sources */,
