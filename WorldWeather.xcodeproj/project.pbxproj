@@ -31,6 +31,7 @@
 		F1E65D19239BF6E700AC289F /* CitiesTableCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D18239BF6E700AC289F /* CitiesTableCellVM.swift */; };
 		F1E65D1C239BFA9A00AC289F /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D1B239BFA9A00AC289F /* Area.swift */; };
 		F1E65D1F239BFB7200AC289F /* SearchPageMappingWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D1E239BFB7200AC289F /* SearchPageMappingWorker.swift */; };
+		F1E65D22239C030900AC289F /* SearchPageConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D21239C030900AC289F /* SearchPageConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		F1E65D18239BF6E700AC289F /* CitiesTableCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableCellVM.swift; sourceTree = "<group>"; };
 		F1E65D1B239BFA9A00AC289F /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		F1E65D1E239BFB7200AC289F /* SearchPageMappingWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageMappingWorker.swift; sourceTree = "<group>"; };
+		F1E65D21239C030900AC289F /* SearchPageConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				F1CAD32E23994FC500670B1C /* SearchPageViewController.swift */,
 				F1E65D0E239BD4AC00AC289F /* SearchPageInteractor.swift */,
 				F1E65D10239BD4C100AC289F /* SearchPagePresenter.swift */,
+				F1E65D21239C030900AC289F /* SearchPageConfigurator.swift */,
 				F1E65D20239BFB7500AC289F /* Workers */,
 			);
 			path = "Search Page";
@@ -369,6 +372,7 @@
 				F1CAD32B23994FC500670B1C /* AppDelegate.swift in Sources */,
 				F1CAD32D23994FC500670B1C /* SceneDelegate.swift in Sources */,
 				F1E65D17239BF6C800AC289F /* CitiesTableCell.swift in Sources */,
+				F1E65D22239C030900AC289F /* SearchPageConfigurator.swift in Sources */,
 				F1E65D09239B757700AC289F /* Errors.swift in Sources */,
 				F1E65D05239B5A2800AC289F /* Response.swift in Sources */,
 			);

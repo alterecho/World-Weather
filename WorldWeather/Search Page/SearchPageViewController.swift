@@ -10,11 +10,20 @@ import UIKit
 
 class SearchPageViewController: UIViewController {
 
+    var output: SearchPageInteractorInput?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        SearchPageConfigurator().configure(viewController: self)
     }
-
-
 }
 
+extension SearchPageViewController: SearchPagePresenterOutput {
+    func displayRecentResults(vms: [CitiesTableCellVM]) {
+
+    }
+
+    func displaySearchResults(vms: [CitiesTableCellVM]) {
+
+    }
+}
