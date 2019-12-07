@@ -28,7 +28,9 @@
 		F1E65D13239BD4CC00AC289F /* SearchPageAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D12239BD4CC00AC289F /* SearchPageAPIWorker.swift */; };
 		F1E65D15239BD53200AC289F /* SearchPageProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D14239BD53200AC289F /* SearchPageProtocols.swift */; };
 		F1E65D17239BF6C800AC289F /* CitiesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D16239BF6C800AC289F /* CitiesTableCell.swift */; };
-		F1E65D19239BF6E700AC289F /* CitiesTableVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D18239BF6E700AC289F /* CitiesTableVM.swift */; };
+		F1E65D19239BF6E700AC289F /* CitiesTableCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D18239BF6E700AC289F /* CitiesTableCellVM.swift */; };
+		F1E65D1C239BFA9A00AC289F /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D1B239BFA9A00AC289F /* Area.swift */; };
+		F1E65D1F239BFB7200AC289F /* SearchPageMappingWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D1E239BFB7200AC289F /* SearchPageMappingWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +77,9 @@
 		F1E65D12239BD4CC00AC289F /* SearchPageAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageAPIWorker.swift; sourceTree = "<group>"; };
 		F1E65D14239BD53200AC289F /* SearchPageProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageProtocols.swift; sourceTree = "<group>"; };
 		F1E65D16239BF6C800AC289F /* CitiesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableCell.swift; sourceTree = "<group>"; };
-		F1E65D18239BF6E700AC289F /* CitiesTableVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableVM.swift; sourceTree = "<group>"; };
+		F1E65D18239BF6E700AC289F /* CitiesTableCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableCellVM.swift; sourceTree = "<group>"; };
+		F1E65D1B239BFA9A00AC289F /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
+		F1E65D1E239BFB7200AC289F /* SearchPageMappingWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageMappingWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +135,7 @@
 				F1CAD32C23994FC500670B1C /* SceneDelegate.swift */,
 				F1E65D1A239BF70700AC289F /* CitiesTableCell */,
 				F1E65D0D239BD48D00AC289F /* Search Page */,
-				F1E65D04239B5A2800AC289F /* Response.swift */,
+				F1E65D1D239BFAA000AC289F /* Models */,
 				F1E65D08239B757700AC289F /* Errors.swift */,
 				F1CAD33023994FC500670B1C /* Main.storyboard */,
 				F1CAD33623994FC500670B1C /* Assets.xcassets */,
@@ -186,7 +190,7 @@
 				F1CAD32E23994FC500670B1C /* SearchPageViewController.swift */,
 				F1E65D0E239BD4AC00AC289F /* SearchPageInteractor.swift */,
 				F1E65D10239BD4C100AC289F /* SearchPagePresenter.swift */,
-				F1E65D12239BD4CC00AC289F /* SearchPageAPIWorker.swift */,
+				F1E65D20239BFB7500AC289F /* Workers */,
 			);
 			path = "Search Page";
 			sourceTree = "<group>";
@@ -195,9 +199,27 @@
 			isa = PBXGroup;
 			children = (
 				F1E65D16239BF6C800AC289F /* CitiesTableCell.swift */,
-				F1E65D18239BF6E700AC289F /* CitiesTableVM.swift */,
+				F1E65D18239BF6E700AC289F /* CitiesTableCellVM.swift */,
 			);
 			path = CitiesTableCell;
+			sourceTree = "<group>";
+		};
+		F1E65D1D239BFAA000AC289F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1E65D04239B5A2800AC289F /* Response.swift */,
+				F1E65D1B239BFA9A00AC289F /* Area.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F1E65D20239BFB7500AC289F /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				F1E65D12239BD4CC00AC289F /* SearchPageAPIWorker.swift */,
+				F1E65D1E239BFB7200AC289F /* SearchPageMappingWorker.swift */,
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,13 +357,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1E65D15239BD53200AC289F /* SearchPageProtocols.swift in Sources */,
-				F1E65D19239BF6E700AC289F /* CitiesTableVM.swift in Sources */,
+				F1E65D19239BF6E700AC289F /* CitiesTableCellVM.swift in Sources */,
 				F1E65D11239BD4C100AC289F /* SearchPagePresenter.swift in Sources */,
 				F1CAD32F23994FC500670B1C /* SearchPageViewController.swift in Sources */,
 				F1E65D0C239B770600AC289F /* Helpers.swift in Sources */,
 				F1CAD33523994FC500670B1C /* WorldWeather.xcdatamodeld in Sources */,
 				F1E65D0F239BD4AC00AC289F /* SearchPageInteractor.swift in Sources */,
 				F1E65D13239BD4CC00AC289F /* SearchPageAPIWorker.swift in Sources */,
+				F1E65D1C239BFA9A00AC289F /* Area.swift in Sources */,
+				F1E65D1F239BFB7200AC289F /* SearchPageMappingWorker.swift in Sources */,
 				F1CAD32B23994FC500670B1C /* AppDelegate.swift in Sources */,
 				F1CAD32D23994FC500670B1C /* SceneDelegate.swift in Sources */,
 				F1E65D17239BF6C800AC289F /* CitiesTableCell.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  SearchPageAPIWorker.swift
+//  CitiesTableViewCell.swift
 //  WorldWeather
 //
 //  Created by v.a.jayachandran on 7/12/19.
@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct CitiesTableCellVM {
+    let name: String
+}
