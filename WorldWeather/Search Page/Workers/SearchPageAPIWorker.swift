@@ -21,13 +21,15 @@ class SearchPageAPIWorker: SearchPageAPIWorkerProtocol {
             //TODO: handle error
             return
         }
-
+        
         let request = URLRequest(url: url)
         session.dataTask(with: request) { (data, response, error) in
             if let data = data {
                 do {
                     let searchResponse = try JSONDecoder().decode(Response.Search.self, from: data)
-                    completionHandler(searchResponse, nil)
+                    DispatchQueue.main.async {
+                        completionHandler(searchResponse, nil)
+                    }
                 } catch {
                     DispatchQueue.main.async {
                         completionHandler(nil, error)
