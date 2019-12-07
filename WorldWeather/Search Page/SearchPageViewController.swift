@@ -48,6 +48,10 @@ extension SearchPageViewController: UITableViewDataSource, UITableViewDelegate {
 
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: SegueIDs.showWeatherDetails, sender: self)
+    }
 }
 
 extension SearchPageViewController: SearchPagePresenterOutput {

@@ -49,11 +49,28 @@
                     <connections>
                         <outlet property="searchField" destination="Rog-I9-hiK" id="FxZ-am-0Y1"/>
                         <outlet property="tableView" destination="0yw-GD-gnO" id="eVR-X0-CrA"/>
+                        <segue destination="aLp-MQ-fEk" kind="show" identifier="showWeatherDetails" id="oJl-cJ-S3p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="76.339285714285708"/>
+        </scene>
+        <!--Weather Details Page View Controller-->
+        <scene sceneID="CEg-Av-kJp">
+            <objects>
+                <viewController id="aLp-MQ-fEk" customClass="WeatherDetailsPageViewController" customModule="WorldWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wpP-pa-SpK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="snE-nV-SZl"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2fh-Ba-RyS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pdt-9a-PQj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="76"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zfb-Yt-Xi6">
