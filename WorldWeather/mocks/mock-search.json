@@ -1,0 +1,81 @@
+{
+    "search_api": {
+        "result": [
+            {
+                "areaName": [
+                    {
+                        "value": "York"
+                    }
+                ],
+                "country": [
+                    {
+                        "value": "United Kingdom"
+                    }
+                ],
+                "region": [
+                    {
+                        "value": "Lancashire"
+                    }
+                ],
+                "latitude": "53.797",
+                "longitude": "-2.449",
+                "population": "144202",
+                "weatherUrl": [
+                    {
+                        "value": "https://www.worldweatheronline.com/v2/weather.aspx?q=53.797,-2.4493"
+                    }
+                ]
+            },
+            {
+                "areaName": [
+                    {
+                        "value": "York"
+                    }
+                ],
+                "country": [
+                    {
+                        "value": "United Kingdom"
+                    }
+                ],
+                "region": [
+                    {
+                        "value": "North Yorkshire"
+                    }
+                ],
+                "latitude": "53.956",
+                "longitude": "-1.095",
+                "population": "144202",
+                "weatherUrl": [
+                    {
+                        "value": "https://www.worldweatheronline.com/v2/weather.aspx?q=53.9562,-1.0947"
+                    }
+                ]
+            },
+            {
+                "areaName": [
+                    {
+                        "value": "Yorkton"
+                    }
+                ],
+                "country": [
+                    {
+                        "value": "Canada"
+                    }
+                ],
+                "region": [
+                    {
+                        "value": "Saskatchewan"
+                    }
+                ],
+                "latitude": "51.217",
+                "longitude": "-102.467",
+                "population": "15669",
+                "weatherUrl": [
+                    {
+                        "value": "https://www.worldweatheronline.com/v2/weather.aspx?q=51.2167,-102.4667"
+                    }
+                ]
+            }
+        ]
+    }
+}
