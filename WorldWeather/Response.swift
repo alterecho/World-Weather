@@ -55,5 +55,44 @@ class Response {
         }
 
     }
-    
+
+    struct WeatherData {
+
+        struct CurrentCondition: Decodable {
+            let temperatureInCentigrade: Double?
+            let temperatureInFahrenheit: Double?
+            let weatherDescription: String?
+            let humidity: Double?
+            let weatherIconURL: Value?
+
+            enum CodingKeys: String, CodingKey {
+                case temperatureInCentigrade = "temp_C"
+                case temperatureInFahrenheit = "temp_F"
+                case weatherDescription = "weatherDesc"
+                case humidity = "humidity"
+                case weatherIconURL = "weatherIconUrl"
+            }
+        }
+
+        let currentCondition: [CurrentCondition]?
+
+        enum CodingKeys: String, CodingKey {
+            case data = "data"
+            case currentCondition = "current_condition"
+        }
+
+        init(data: Data) throws {
+            if let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: AnyObject] {
+                if let currentConditionDict = json[CodingKeys.currentCondition.rawValue] as? [String: Any] {
+                    let currentConditionData = try JSONSerialization.data(withJSONObject: currentConditionDict)
+                    currentCondition = try JSONDecoder().decode([CurrentCondition].self, from: currentConditionData)
+
+                } else {
+                    throw Error.decodeError(description: "Unable to decode currentCondition")
+                }
+            }
+            throw Error.decodeError(description: "Unable to decode data \(data)")
+        }
+    }
+
 }
