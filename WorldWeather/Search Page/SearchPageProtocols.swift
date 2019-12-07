@@ -14,12 +14,12 @@ protocol SearchPageInteractorInput {
     func searchButtonClicked()
 }
 
-protocol SearchPagePresenterInput {
-    func presentRecentCities(vms: [CitiesTableCellVM])
-    func presentSearchResults(vms: [CitiesTableCellVM])
+protocol SearchPageInteractorOutput {
+    func presentRecentCities(areas: [Area])
+    func presentSearchResults(areas: [Area])
 }
 
-protocol SearchPagePresenterOutput {
+protocol SearchPagePresenterOutput: class {
     func displayRecentResults(vms: [CitiesTableCellVM])
     func displaySearchResults(vms: [CitiesTableCellVM])
 }

@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+class SearchPagePresenter: SearchPageInteractorOutput {
+
+    weak var output: SearchPagePresenterOutput?
+
+    init(output: SearchPagePresenterOutput) {
+        self.output = output
+    }
+
+    func presentRecentCities(areas: [Area]) {
+
+    }
+
+    func presentSearchResults(areas: [Area]) {
+
+    }
+}

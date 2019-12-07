@@ -13,12 +13,14 @@ class SearchPageInteractor: SearchPageInteractorInput {
 
     let apiWorker: SearchPageAPIWorkerProtocol
     let mappingWorker: SearchPageMappingWorkerProtocol
+    let output: SearchPageInteractorOutput
 
     private var searchText: String?
 
-    init() {
+    init(output: SearchPageInteractorOutput) {
         apiWorker = SearchPageAPIWorker()
         mappingWorker = SearchPageMappingWorker()
+        self.output = output
     }
 
     func searchFieldTextChanged(text: String) {
@@ -29,7 +31,8 @@ class SearchPageInteractor: SearchPageInteractorInput {
         if let searchText = searchText {
             apiWorker.fetchSearchResults(for: searchText) { [weak self] (searchResponse, error) in
                 if let searchResponse = searchResponse {
-                    self?.mappingWorker.areasFrom(response: searchResponse)
+                    let areas = self?.mappingWorker.areasFrom(response: searchResponse)
+                    self?.output.presentSearchResults(areas: areas ?? [])
                 } else {
                     // show error
                 }
