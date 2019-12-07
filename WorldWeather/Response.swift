@@ -59,10 +59,10 @@ class Response {
     struct WeatherData {
 
         struct CurrentCondition: Decodable {
-            let temperatureInCentigrade: Double?
-            let temperatureInFahrenheit: Double?
-            let weatherDescription: String?
-            let humidity: Double?
+            let temperatureInCentigrade: String?
+            let temperatureInFahrenheit: String?
+            let weatherDescription: Value?
+            let humidity: String?
             let weatherIconURL: Value?
 
             enum CodingKeys: String, CodingKey {
@@ -82,16 +82,19 @@ class Response {
         }
 
         init(data: Data) throws {
-            if let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: AnyObject] {
-                if let currentConditionDict = json[CodingKeys.currentCondition.rawValue] as? [String: Any] {
-                    let currentConditionData = try JSONSerialization.data(withJSONObject: currentConditionDict)
-                    currentCondition = try JSONDecoder().decode([CurrentCondition].self, from: currentConditionData)
-
-                } else {
-                    throw Error.decodeError(description: "Unable to decode currentCondition")
-                }
+            guard let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: AnyObject] else {
+                throw Error.decodeError(description: "Unable to decode data \(data)")
             }
-            throw Error.decodeError(description: "Unable to decode data \(data)")
+            guard let dataJSON = json[CodingKeys.data.rawValue] as? [String: Any] else {
+                throw Error.decodeError(description: "Unable to decode data")
+            }
+
+            guard let currentConditionDict = dataJSON[CodingKeys.currentCondition.rawValue] as? [[String: Any]] else {
+                throw Error.decodeError(description: "Unable to decode currentCondition")
+            }
+
+            let currentConditionData = try JSONSerialization.data(withJSONObject: currentConditionDict)
+            currentCondition = try JSONDecoder().decode([CurrentCondition].self, from: currentConditionData)
         }
     }
 
