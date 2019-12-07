@@ -26,4 +26,16 @@ class ResponseDecodingTests: XCTestCase {
             XCTFail(error.localizedDescription)
         }
     }
+
+    func testWeatherDataDecoding() {
+        do {
+            let data = try Helpers.data(from: "mock-weather", ext: "json")
+            let weatherResponse = try Response.WeatherData(data: data)
+            print(weatherResponse)
+            XCTAssert(weatherResponse.currentCondition?.count != 0, "unable to parse weather results")
+
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
+    }
 }
