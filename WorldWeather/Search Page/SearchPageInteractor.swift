@@ -21,6 +21,9 @@ class SearchPageInteractor: SearchPageInteractorInput {
         apiWorker = SearchPageAPIWorker()
         mappingWorker = SearchPageMappingWorker()
         self.output = output
+
+        searchText = "new"
+        searchButtonClicked()
     }
 
     func searchFieldTextChanged(text: String) {
@@ -29,7 +32,7 @@ class SearchPageInteractor: SearchPageInteractorInput {
 
     func searchButtonClicked() {
         if let searchText = searchText {
-            apiWorker.fetchSearchResults(for: searchText) { [weak self] (searchResponse, error) in
+            apiWorker.fetchSearchResults(for: searchText, noOfResults: 10) { [weak self] (searchResponse, error) in
                 if let searchResponse = searchResponse {
                     let areas = self?.mappingWorker.areasFrom(response: searchResponse)
                     self?.output.presentSearchResults(areas: areas ?? [])

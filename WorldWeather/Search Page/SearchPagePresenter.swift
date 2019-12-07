@@ -21,6 +21,7 @@ class SearchPagePresenter: SearchPageInteractorOutput {
     }
 
     func presentSearchResults(areas: [Area]) {
-
+        let vms = areas.map { CitiesTableCellVM(name: $0.areaName) }
+        output?.displaySearchResults(vms: vms)
     }
 }
