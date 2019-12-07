@@ -11,7 +11,7 @@ import UIKit
 class SearchPageViewController: UIViewController {
 
     private static let cellID = "cellID"
-
+    @IBOutlet weak var searchField: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
 
     var output: SearchPageInteractorInput?
@@ -57,5 +57,16 @@ extension SearchPageViewController: SearchPagePresenterOutput {
 
     func displaySearchResults(vms: [CitiesTableCellVM]) {
         cellVMs = vms
+    }
+}
+
+extension SearchPageViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        output?.searchFieldTextChanged(text: searchText)
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        output?.searchButtonClicked()
     }
 }

@@ -27,7 +27,7 @@ class SearchPageInteractor: SearchPageInteractorInput {
     }
 
     func searchFieldTextChanged(text: String) {
-
+        searchText = text
     }
 
     func searchButtonClicked() {
@@ -37,7 +37,8 @@ class SearchPageInteractor: SearchPageInteractorInput {
                     let areas = self?.mappingWorker.areasFrom(response: searchResponse)
                     self?.output.presentSearchResults(areas: areas ?? [])
                 } else {
-                    // show error
+                    self?.output.presentSearchResults(areas: [])
+                    //TODO: - show error
                 }
             }
         } else {
