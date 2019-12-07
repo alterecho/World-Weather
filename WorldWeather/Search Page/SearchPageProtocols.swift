@@ -8,15 +8,18 @@
 
 import Foundation
 
+
 protocol SearchPageInteractorInput {
     func searchFieldTextChanged(text: String)
     func searchButtonClicked()
 }
 
 protocol SearchPagePresenterInput {
+    func presentRecentCities()
     func presentSearchResults()
 }
 
 protocol SearchPagePresenterOutput {
+    func displayRecentResults()
     func displaySearchResults()
 }
