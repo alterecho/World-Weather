@@ -15,11 +15,20 @@ protocol SearchPageInteractorInput {
 }
 
 protocol SearchPagePresenterInput {
-    func presentRecentCities()
-    func presentSearchResults()
+    func presentRecentCities(vms: [CitiesTableCellVM])
+    func presentSearchResults(vms: [CitiesTableCellVM])
 }
 
 protocol SearchPagePresenterOutput {
-    func displayRecentResults()
-    func displaySearchResults()
+    func displayRecentResults(vms: [CitiesTableCellVM])
+    func displaySearchResults(vms: [CitiesTableCellVM])
+}
+
+protocol SearchPageAPIWorkerProtocol {
+    func fetchSearchResults(for searchString: String, completionHandler: @escaping (Response.Search?, Error?) -> Void)
+    init(session: URLSession)
+}
+
+protocol SearchPageMappingWorkerProtocol {
+    func areasFrom(response: Response.Search) -> [Area]
 }
