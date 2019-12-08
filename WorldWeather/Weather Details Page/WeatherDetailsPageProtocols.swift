@@ -12,10 +12,14 @@ protocol WeatherDetailsPageInteractorInput {
 
 protocol WeatherDetailsPagePresenterInput {
     func present(weather: WeatherModel)
+    func showLoading()
+    func hideLoading()
 }
 
 protocol WeatherDetailsPagePresenterOutput: class {
     func display(vm: WeatherDetailsPageViewModel)
+    func showLoading()
+    func hideLoading()
 }
 
 protocol WeatherDetailsPageAPIWorkerProtocol {

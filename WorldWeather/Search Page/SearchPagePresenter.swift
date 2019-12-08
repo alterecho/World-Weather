@@ -27,8 +27,16 @@ class SearchPagePresenter: SearchPageInteractorOutput {
 
     func gotoWeatherDetails(for area: Area) {
         output?.gotoWeatherDetails(area: area)
-
     }
+
+    func showLoading() {
+        output?.showLoading()
+    }
+
+    func hideLoading() {
+        output?.hideLoading()
+    }
+
 }
 
 

@@ -30,23 +30,32 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="o5O-UY-TSh"/>
                                 </connections>
                             </searchBar>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zLv-iH-CMz" customClass="LoadIndicator" customModule="WorldWeather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Rog-I9-hiK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IL8-K9-0bn"/>
                             <constraint firstItem="Rog-I9-hiK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="L6n-eG-Ylj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zLv-iH-CMz" secondAttribute="bottom" id="MpT-IG-hwL"/>
                             <constraint firstItem="Rog-I9-hiK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uhg-N5-xcT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0yw-GD-gnO" secondAttribute="trailing" id="V0x-7q-a0P"/>
                             <constraint firstItem="0yw-GD-gnO" firstAttribute="top" secondItem="Rog-I9-hiK" secondAttribute="bottom" id="Wne-l9-KQ6"/>
+                            <constraint firstItem="zLv-iH-CMz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XUx-td-lIQ"/>
                             <constraint firstAttribute="trailing" secondItem="Rog-I9-hiK" secondAttribute="trailing" id="YVz-8I-xxi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0yw-GD-gnO" secondAttribute="bottom" id="grz-fJ-03z"/>
+                            <constraint firstItem="zLv-iH-CMz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vxl-E5-dXj"/>
                             <constraint firstItem="Rog-I9-hiK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xpf-An-J1F"/>
                             <constraint firstItem="0yw-GD-gnO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="z1m-tj-Hkc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zLv-iH-CMz" secondAttribute="trailing" id="zLD-B1-umk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="KE5-HF-aWY"/>
                     <connections>
+                        <outlet property="loadIndicator" destination="zLv-iH-CMz" id="DaF-cN-A99"/>
                         <outlet property="searchField" destination="Rog-I9-hiK" id="FxZ-am-0Y1"/>
                         <outlet property="tableView" destination="0yw-GD-gnO" id="eVR-X0-CrA"/>
                         <segue destination="aLp-MQ-fEk" kind="show" identifier="showWeatherDetails" id="oJl-cJ-S3p"/>
@@ -99,20 +108,29 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8z6-jY-RTJ" customClass="LoadIndicator" customModule="WorldWeather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="snE-nV-SZl" firstAttribute="trailing" secondItem="WHg-N1-jEq" secondAttribute="trailing" id="6if-YM-mdo"/>
+                            <constraint firstItem="8z6-jY-RTJ" firstAttribute="leading" secondItem="snE-nV-SZl" secondAttribute="leading" id="936-7R-9R1"/>
+                            <constraint firstItem="8z6-jY-RTJ" firstAttribute="top" secondItem="snE-nV-SZl" secondAttribute="top" id="JRu-vt-Fda"/>
                             <constraint firstItem="WHg-N1-jEq" firstAttribute="top" secondItem="GpJ-Tg-yuU" secondAttribute="bottom" id="RWF-8H-vlk"/>
                             <constraint firstItem="WHg-N1-jEq" firstAttribute="leading" secondItem="snE-nV-SZl" secondAttribute="leading" id="ahR-un-Tnk"/>
                             <constraint firstItem="GpJ-Tg-yuU" firstAttribute="top" secondItem="snE-nV-SZl" secondAttribute="top" id="etK-pg-knO"/>
+                            <constraint firstItem="snE-nV-SZl" firstAttribute="bottom" secondItem="8z6-jY-RTJ" secondAttribute="bottom" id="jjl-9h-vDA"/>
                             <constraint firstItem="GpJ-Tg-yuU" firstAttribute="leading" secondItem="snE-nV-SZl" secondAttribute="leading" id="rSY-qY-sTL"/>
+                            <constraint firstItem="snE-nV-SZl" firstAttribute="trailing" secondItem="8z6-jY-RTJ" secondAttribute="trailing" id="uaF-xB-Zey"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="snE-nV-SZl"/>
                     </view>
                     <navigationItem key="navigationItem" id="2fh-Ba-RyS"/>
                     <connections>
                         <outlet property="humidityLabel" destination="uwn-Io-tdk" id="TXp-mY-CJq"/>
+                        <outlet property="loadIndicator" destination="8z6-jY-RTJ" id="stm-uW-hVu"/>
                         <outlet property="temperatureLabel" destination="8I4-fx-OLj" id="TJ8-Rb-323"/>
                         <outlet property="weatherDescriptionLabel" destination="LeF-vi-w88" id="MNn-CT-tyr"/>
                         <outlet property="weatherIconImageView" destination="GpJ-Tg-yuU" id="rCD-ER-N6K"/>

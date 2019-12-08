@@ -19,6 +19,7 @@ class WeatherDetailsPageInteractor: WeatherDetailsPageInteractorInput {
     }
 
     func load(area: Area?) {
+        output.showLoading()
         apiWorker.fetchWeatherDetails(location: Location(latitude: area?.latitude ?? 0.0, Longitude: area?.longitude ?? 0.0), numberOfDays: 2) { [weak self] (response, error) in
             if let response = response {
                 if let weatherDetails = self?.mappingWorker.weather(from: response) {
@@ -30,8 +31,8 @@ class WeatherDetailsPageInteractor: WeatherDetailsPageInteractorInput {
             } else {
                 AlertSystem.alert(title: "Error", message: error?.localizedDescription)
             }
+
+            self?.output.hideLoading()
         }
     }
-
-
 }

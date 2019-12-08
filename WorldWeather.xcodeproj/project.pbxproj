@@ -47,6 +47,7 @@
 		F1E65D3E239CD56900AC289F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D3D239CD56900AC289F /* Location.swift */; };
 		F1E65D41239CF16B00AC289F /* WeatherDetailsPageMappingWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D40239CF16B00AC289F /* WeatherDetailsPageMappingWorker.swift */; };
 		F1E65D43239CFA5B00AC289F /* AlertSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D42239CFA5B00AC289F /* AlertSystem.swift */; };
+		F1E65D45239D219A00AC289F /* LoadIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D44239D219A00AC289F /* LoadIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		F1E65D3D239CD56900AC289F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F1E65D40239CF16B00AC289F /* WeatherDetailsPageMappingWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsPageMappingWorker.swift; sourceTree = "<group>"; };
 		F1E65D42239CFA5B00AC289F /* AlertSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSystem.swift; sourceTree = "<group>"; };
+		F1E65D44239D219A00AC289F /* LoadIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				F1E65D28239C1A2D00AC289F /* SegueIDs.swift */,
 				F1E65D23239C049600AC289F /* API.swift */,
 				F1E65D42239CFA5B00AC289F /* AlertSystem.swift */,
+				F1E65D44239D219A00AC289F /* LoadIndicator.swift */,
 				F1E65D1A239BF70700AC289F /* CitiesTableCell */,
 				F1E65D0D239BD48D00AC289F /* Search Page */,
 				F1E65D25239C19AE00AC289F /* Weather Details Page */,
@@ -439,6 +442,7 @@
 				F1E65D35239CA3C100AC289F /* WeatherDetailsPageConfigurator.swift in Sources */,
 				F1CAD33523994FC500670B1C /* WorldWeather.xcdatamodeld in Sources */,
 				F1E65D0F239BD4AC00AC289F /* SearchPageInteractor.swift in Sources */,
+				F1E65D45239D219A00AC289F /* LoadIndicator.swift in Sources */,
 				F1E65D2F239CA27B00AC289F /* WeatherDetailsPageInteractor.swift in Sources */,
 				F1E65D13239BD4CC00AC289F /* SearchPageAPIWorker.swift in Sources */,
 				F1E65D1C239BFA9A00AC289F /* Area.swift in Sources */,

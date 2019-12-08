@@ -9,6 +9,14 @@
 import Foundation
 
 class WeatherDetailsPagePresenter: WeatherDetailsPagePresenterInput {
+    func showLoading() {
+        output?.showLoading()
+    }
+
+    func hideLoading() {
+        output?.hideLoading()
+    }
+
 
     weak var output: WeatherDetailsPagePresenterOutput?
     init(output: WeatherDetailsPagePresenterOutput) {

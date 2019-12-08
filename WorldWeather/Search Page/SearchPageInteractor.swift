@@ -34,6 +34,7 @@ class SearchPageInteractor: SearchPageInteractorInput {
 
     func searchButtonClicked() {
         if let searchText = searchText {
+            output.showLoading()
             apiWorker.fetchSearchResults(for: searchText, noOfResults: 10) { [weak self] (searchResponse, error) in
                 if let searchResponse = searchResponse {
                     self?.displayedAreas = self?.mappingWorker.areasFrom(response: searchResponse) ?? []
@@ -42,11 +43,11 @@ class SearchPageInteractor: SearchPageInteractorInput {
                     self?.output.presentSearchResults(areas: [])
                     AlertSystem.alert(title: "Error", message: error?.localizedDescription)
                 }
+                self?.output.hideLoading()
             }
         } else {
-
+            AlertSystem.alert(title: "", message: "Enter name of area to search")
         }
-
     }
 
     func selectedArea(indexPath: IndexPath) {

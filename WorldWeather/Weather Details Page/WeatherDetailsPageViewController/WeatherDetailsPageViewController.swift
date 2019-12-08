@@ -15,10 +15,10 @@ class WeatherDetailsPageViewController: UIViewController {
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var weatherIconImageView: UIImageView!
-
+    @IBOutlet weak var loadIndicator: LoadIndicator!
 
     var output: WeatherDetailsPageInteractorInput?
-    
+
     private var vm: WeatherDetailsPageViewModel? {
         didSet {
             temperatureLabel.text = vm?.temperatureLabelText
@@ -53,14 +53,30 @@ class WeatherDetailsPageViewController: UIViewController {
         WeatherDetailsPageConfigurator().configure(viewController: self)
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // because interactor sets the area and calls load before this view has loaded
+        (area = area)
+    }
+
     var area: Area? {
         didSet {
-            output?.load(area: area)
+            if isViewLoaded {
+                output?.load(area: area)
+            }
         }
     }
 }
 
 extension WeatherDetailsPageViewController: WeatherDetailsPagePresenterOutput {
+    func showLoading() {
+        loadIndicator.isLoading = true
+    }
+
+    func hideLoading() {
+        loadIndicator.isLoading = false
+    }
+
     func display(vm: WeatherDetailsPageViewModel) {
         self.vm = vm
     }

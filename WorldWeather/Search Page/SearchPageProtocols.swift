@@ -19,12 +19,16 @@ protocol SearchPageInteractorOutput {
     func presentRecentCities(areas: [Area])
     func presentSearchResults(areas: [Area])
     func gotoWeatherDetails(for area: Area)
+    func showLoading()
+    func hideLoading()
 }
 
 protocol SearchPagePresenterOutput: class {
     func displayRecentResults(vms: [CitiesTableCellVM])
     func displaySearchResults(vms: [CitiesTableCellVM])
     func gotoWeatherDetails(area: Area)
+    func showLoading()
+    func hideLoading()
 }
 
 protocol SearchPageAPIWorkerProtocol {

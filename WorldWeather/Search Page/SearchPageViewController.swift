@@ -13,7 +13,7 @@ class SearchPageViewController: UIViewController {
     private static let cellID = "cellID"
     @IBOutlet weak var searchField: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var loadIndicator: LoadIndicator!
     var output: SearchPageInteractorInput?
 
     var router: SearchPagePageRouterProtocol?
@@ -61,6 +61,14 @@ extension SearchPageViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension SearchPageViewController: SearchPagePresenterOutput {
+    func showLoading() {
+        loadIndicator.isLoading = true
+    }
+
+    func hideLoading() {
+        loadIndicator.isLoading = false
+    }
+
 
     func displayRecentResults(vms: [CitiesTableCellVM]) {
         cellVMs = vms
