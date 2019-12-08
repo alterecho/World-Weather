@@ -46,6 +46,7 @@
 		F1E65D3B239CA77B00AC289F /* WeatherDetailsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D3A239CA77B00AC289F /* WeatherDetailsPageViewModel.swift */; };
 		F1E65D3E239CD56900AC289F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D3D239CD56900AC289F /* Location.swift */; };
 		F1E65D41239CF16B00AC289F /* WeatherDetailsPageMappingWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D40239CF16B00AC289F /* WeatherDetailsPageMappingWorker.swift */; };
+		F1E65D43239CFA5B00AC289F /* AlertSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D42239CFA5B00AC289F /* AlertSystem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		F1E65D3A239CA77B00AC289F /* WeatherDetailsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsPageViewModel.swift; sourceTree = "<group>"; };
 		F1E65D3D239CD56900AC289F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F1E65D40239CF16B00AC289F /* WeatherDetailsPageMappingWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsPageMappingWorker.swift; sourceTree = "<group>"; };
+		F1E65D42239CFA5B00AC289F /* AlertSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSystem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				F1CAD32C23994FC500670B1C /* SceneDelegate.swift */,
 				F1E65D28239C1A2D00AC289F /* SegueIDs.swift */,
 				F1E65D23239C049600AC289F /* API.swift */,
+				F1E65D42239CFA5B00AC289F /* AlertSystem.swift */,
 				F1E65D1A239BF70700AC289F /* CitiesTableCell */,
 				F1E65D0D239BD48D00AC289F /* Search Page */,
 				F1E65D25239C19AE00AC289F /* Weather Details Page */,
@@ -442,6 +445,7 @@
 				F1E65D1F239BFB7200AC289F /* SearchPageMappingWorker.swift in Sources */,
 				F1E65D37239CA4A000AC289F /* WeatherDetailsPageRouter.swift in Sources */,
 				F1E65D29239C1A2D00AC289F /* SegueIDs.swift in Sources */,
+				F1E65D43239CFA5B00AC289F /* AlertSystem.swift in Sources */,
 				F1E65D41239CF16B00AC289F /* WeatherDetailsPageMappingWorker.swift in Sources */,
 				F1CAD32B23994FC500670B1C /* AppDelegate.swift in Sources */,
 				F1E65D2B239CA0C100AC289F /* WeatherDetailsPageProtocols.swift in Sources */,

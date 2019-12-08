@@ -17,7 +17,7 @@ class WeatherDetailsPageAPIWorker: WeatherDetailsPageAPIWorkerProtocol {
 
     func fetchWeatherDetails(location: Location, numberOfDays: Int, completionHandler: @escaping (Response.WeatherData?, Swift.Error?) -> Void) {
         guard let url = API.weatherDataURL(lat: location.latitude, lon: location.Longitude, numberOfDays: 5) else {
-            //TODO: handle error
+            AlertSystem.alert(title: "Error", message: "Error forming URL for search")
             return
         }
         let request = URLRequest(url: url)

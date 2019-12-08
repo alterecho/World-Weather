@@ -24,11 +24,11 @@ class WeatherDetailsPageInteractor: WeatherDetailsPageInteractorInput {
                 if let weatherDetails = self?.mappingWorker.weather(from: response) {
                     self?.output.present(weather: weatherDetails)
                 } else {
-                    //TODO: handle error
+                    AlertSystem.alert(title: "Error", message: "Unable to map weather response")
                 }
 
             } else {
-                //TODO: handle error
+                AlertSystem.alert(title: "Error", message: error?.localizedDescription)
             }
         }
     }

@@ -40,7 +40,7 @@ class SearchPageInteractor: SearchPageInteractorInput {
                     self?.output.presentSearchResults(areas: self?.displayedAreas ?? [])
                 } else {
                     self?.output.presentSearchResults(areas: [])
-                    //TODO: - show error
+                    AlertSystem.alert(title: "Error", message: error?.localizedDescription)
                 }
             }
         } else {
