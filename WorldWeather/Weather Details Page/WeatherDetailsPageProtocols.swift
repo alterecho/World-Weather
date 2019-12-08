@@ -9,13 +9,13 @@
 import Foundation
 
 protocol WeatherDetailsPageInteractorInput {
-    
+
 }
 
 protocol WeatherDetailsPagePresenterInput {
     func present(weather: WeatherModel)
 }
 
-protocol WeatherDetailsPagePresenterOutput {
+protocol WeatherDetailsPagePresenterOutput: class {
     func display(weather: WeatherModel)
 }

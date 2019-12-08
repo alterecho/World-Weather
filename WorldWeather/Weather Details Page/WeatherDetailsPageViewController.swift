@@ -12,3 +12,9 @@ import UIKit
 class WeatherDetailsPageViewController: UIViewController {
     
 }
+
+extension WeatherDetailsPageViewController: WeatherDetailsPagePresenterOutput {
+    func display(weather: WeatherModel) {
+        
+    }
+}
