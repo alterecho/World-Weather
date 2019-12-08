@@ -10,15 +10,19 @@ import Foundation
 
 class WeatherDetailsPageInteractor: WeatherDetailsPageInteractorInput {
 
-
     let output: WeatherDetailsPagePresenterInput
+    private let apiWorker = WeatherDetailsPageAPIWorker()
 
     init(output: WeatherDetailsPagePresenterInput) {
         self.output = output
     }
 
     func load(area: Area?) {
-        print(area)
+        apiWorker.fetchWeatherDetails(location: Location(latitude: area?.latitude ?? 0.0, Longitude: area?.longitude ?? 0.0), numberOfDays: 2) { (weatherData, error) in
+            if let weatherData = weatherData {
+                
+            }
+        }
     }
 
 
