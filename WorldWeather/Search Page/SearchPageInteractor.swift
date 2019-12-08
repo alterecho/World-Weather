@@ -15,6 +15,8 @@ class SearchPageInteractor: SearchPageInteractorInput {
     let mappingWorker: SearchPageMappingWorkerProtocol
     let output: SearchPageInteractorOutput
 
+    private var displayedAreas: [Area] = [Area]()
+
     private var searchText: String?
 
     init(output: SearchPageInteractorOutput) {
@@ -34,8 +36,8 @@ class SearchPageInteractor: SearchPageInteractorInput {
         if let searchText = searchText {
             apiWorker.fetchSearchResults(for: searchText, noOfResults: 10) { [weak self] (searchResponse, error) in
                 if let searchResponse = searchResponse {
-                    let areas = self?.mappingWorker.areasFrom(response: searchResponse)
-                    self?.output.presentSearchResults(areas: areas ?? [])
+                    self?.displayedAreas = self?.mappingWorker.areasFrom(response: searchResponse) ?? []
+                    self?.output.presentSearchResults(areas: self?.displayedAreas ?? [])
                 } else {
                     self?.output.presentSearchResults(areas: [])
                     //TODO: - show error
@@ -48,9 +50,7 @@ class SearchPageInteractor: SearchPageInteractorInput {
     }
 
     func selectedArea(indexPath: IndexPath) {
-        let weatherModel = WeatherModel(temperatureInCentigrade: 0, temperatureInFahrenheit: 0,
-                                        humidity: 0, weatherDescription: nil,
-                                        weatherIconURL: nil)
-        output.gotoWeatherDetails(weather: weatherModel)
+        let area = displayedAreas[indexPath.row]
+        output.gotoWeatherDetails(for: area)
     }
 }

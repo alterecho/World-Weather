@@ -25,8 +25,8 @@ class SearchPagePresenter: SearchPageInteractorOutput {
         output?.displaySearchResults(vms: vms)
     }
 
-    func gotoWeatherDetails(weather: WeatherModel) {
-        output?.gotoWeatherDetails(vm: WeatherDetailsPageViewModel(temperatureInCentigrade: 0, temperatureInFahrenheit: 0, humidity: 0, weatherDescription: nil, weatherIconURL: nil))
+    func gotoWeatherDetails(for area: Area) {
+        output?.gotoWeatherDetails(area: area)
 
     }
 }

@@ -10,10 +10,16 @@ import Foundation
 
 class WeatherDetailsPageInteractor: WeatherDetailsPageInteractorInput {
 
+
     let output: WeatherDetailsPagePresenterInput
 
     init(output: WeatherDetailsPagePresenterInput) {
         self.output = output
     }
+
+    func load(area: Area?) {
+        print(area)
+    }
+
 
 }

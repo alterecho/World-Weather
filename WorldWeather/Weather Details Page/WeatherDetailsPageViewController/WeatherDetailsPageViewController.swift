@@ -12,15 +12,26 @@ import UIKit
 class WeatherDetailsPageViewController: UIViewController {
     var output: WeatherDetailsPageInteractorInput?
 
-    var vm: WeatherDetailsPageViewModel? {
+    private var vm: WeatherDetailsPageViewModel? {
         didSet {
 
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         WeatherDetailsPageConfigurator().configure(viewController: self)
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        WeatherDetailsPageConfigurator().configure(viewController: self)
+    }
+
+    var area: Area? {
+        didSet {
+            output?.load(area: area)
+        }
     }
 }
 

@@ -7,7 +7,7 @@
 //
 
 protocol WeatherDetailsPageInteractorInput {
-
+    func load(area: Area?)
 }
 
 protocol WeatherDetailsPagePresenterInput {

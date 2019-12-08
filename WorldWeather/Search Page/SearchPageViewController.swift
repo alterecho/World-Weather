@@ -30,6 +30,10 @@ class SearchPageViewController: UIViewController {
 
         tableView.register(CitiesTableCell.self, forCellReuseIdentifier: SearchPageViewController.cellID)
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        router?.prepare(for: segue, sender: sender)
+    }
 }
 
 extension SearchPageViewController: UITableViewDataSource, UITableViewDelegate {
@@ -66,8 +70,8 @@ extension SearchPageViewController: SearchPagePresenterOutput {
         cellVMs = vms
     }
 
-    func gotoWeatherDetails(vm: WeatherDetailsPageViewModel) {
-        router?.gotoWeatherDetails(weather: vm)
+    func gotoWeatherDetails(area: Area) {
+        router?.gotoWeatherDetails(area: area)
     }
 
 }
