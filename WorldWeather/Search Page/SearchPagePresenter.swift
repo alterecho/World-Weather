@@ -17,7 +17,8 @@ class SearchPagePresenter: SearchPageInteractorOutput {
     }
 
     func presentRecentCities(areas: [Area]) {
-
+        let vms = areas.map { CitiesTableCellVM(name: $0.areaName) }
+        output?.displayRecentResults(vms: vms)
     }
 
     func presentSearchResults(areas: [Area]) {

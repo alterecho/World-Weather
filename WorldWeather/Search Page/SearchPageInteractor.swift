@@ -15,7 +15,10 @@ class SearchPageInteractor: SearchPageInteractorInput {
     let mappingWorker: SearchPageMappingWorkerProtocol
     let output: SearchPageInteractorOutput
 
+    let recentAreasMax = 10
+
     private var displayedAreas: [Area] = [Area]()
+    private var recentAreas: [Area] = [Area]()
 
     private var searchText: String?
 
@@ -23,10 +26,21 @@ class SearchPageInteractor: SearchPageInteractorInput {
         apiWorker = SearchPageAPIWorker()
         mappingWorker = SearchPageMappingWorker()
         self.output = output
-
-        searchText = "new"
-        searchButtonClicked()
     }
+
+    func load() {
+        //        searchText = "new"
+        //        searchButtonClicked()
+        do {
+            recentAreas = try DataStore.shared.loadRecents() ?? []
+        } catch {
+            recentAreas = []
+        }
+        displayedAreas = recentAreas
+        output.presentRecentCities(areas: recentAreas)
+    }
+
+
 
     func searchFieldTextChanged(text: String) {
         searchText = text
@@ -52,6 +66,25 @@ class SearchPageInteractor: SearchPageInteractorInput {
 
     func selectedArea(indexPath: IndexPath) {
         let area = displayedAreas[indexPath.row]
+        addToRecents(area: area)
         output.gotoWeatherDetails(for: area)
+    }
+
+    private func addToRecents(area: Area) {
+        if recentAreas.count > (recentAreasMax - 1) {
+            _ = recentAreas.popLast()
+        }
+
+        if recentAreas.count > 0 {
+            recentAreas.insert(area, at: 0)
+        } else {
+            recentAreas.append(area)
+        }
+        do {
+            try DataStore.shared.saveRecents(areas: recentAreas)
+        } catch {
+            AlertSystem.alert(title: "Error", message: "Error saving to recents")
+        }
+
     }
 }

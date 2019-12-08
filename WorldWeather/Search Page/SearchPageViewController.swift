@@ -27,8 +27,9 @@ class SearchPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         SearchPageConfigurator().configure(viewController: self)
-
         tableView.register(CitiesTableCell.self, forCellReuseIdentifier: SearchPageViewController.cellID)
+        
+        output?.load()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -10,6 +10,7 @@ import UIKit
 
 
 protocol SearchPageInteractorInput {
+    func load()
     func searchFieldTextChanged(text: String)
     func searchButtonClicked()
     func selectedArea(indexPath: IndexPath)
