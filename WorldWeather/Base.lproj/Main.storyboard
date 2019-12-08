@@ -115,6 +115,7 @@
                         <outlet property="humidityLabel" destination="uwn-Io-tdk" id="TXp-mY-CJq"/>
                         <outlet property="temperatureLabel" destination="8I4-fx-OLj" id="TJ8-Rb-323"/>
                         <outlet property="weatherDescriptionLabel" destination="LeF-vi-w88" id="MNn-CT-tyr"/>
+                        <outlet property="weatherIconImageView" destination="GpJ-Tg-yuU" id="rCD-ER-N6K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pdt-9a-PQj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

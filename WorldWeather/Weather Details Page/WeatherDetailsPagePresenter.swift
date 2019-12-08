@@ -20,7 +20,7 @@ class WeatherDetailsPagePresenter: WeatherDetailsPagePresenterInput {
             temperatureLabelText: "\(weather.temperatureInCentigrade)",
             humidityLabelText: "\(weather.humidity)",
             weatherDescriptionLabelText: weather.weatherDescription,
-            weatherIcon: nil)
+            weatherIcon: weather.weatherIconURL)
         output?.display(vm: vm)
     }
 

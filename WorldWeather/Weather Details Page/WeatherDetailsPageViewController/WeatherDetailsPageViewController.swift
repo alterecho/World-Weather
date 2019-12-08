@@ -14,6 +14,7 @@ class WeatherDetailsPageViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var weatherIconImageView: UIImageView!
 
 
     var output: WeatherDetailsPageInteractorInput?
@@ -23,6 +24,22 @@ class WeatherDetailsPageViewController: UIViewController {
             temperatureLabel.text = vm?.temperatureLabelText
             weatherDescriptionLabel.text = vm?.weatherDescriptionLabelText
             humidityLabel.text = vm?.humidityLabelText
+
+            //TODO: implement image downloading
+            if let url = vm?.weatherIcon {
+
+                DispatchQueue.global(qos: .background).async {
+                    do {
+                        let data = try Data(contentsOf: url)
+                        self.weatherIconImageView.image = UIImage(data: data)
+                    } catch {
+                        print(error)
+                    }
+                }
+            } else {
+                weatherIconImageView.image = nil
+            }
+
         }
     }
 
