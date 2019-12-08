@@ -6,8 +6,6 @@
 //  Copyright © 2019 v.a.jayachandran. All rights reserved.
 //
 
-import Foundation
-
 protocol WeatherDetailsPageInteractorInput {
 
 }
@@ -18,4 +16,8 @@ protocol WeatherDetailsPagePresenterInput {
 
 protocol WeatherDetailsPagePresenterOutput: class {
     func display(weather: WeatherModel)
+}
+
+protocol WeatherDetailsPageAPIWorkerProtocol {
+    func fetchWeatherDetails(location: Location, numberOfDays: Int, completionHandler: @escaping (Response.WeatherData?, Swift.Error?) -> Void)
 }

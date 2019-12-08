@@ -18,7 +18,7 @@ class API {
         return URL(string: "\(baseURLString)/\(searchPath)?query=\(string)&format=json&num_of_results=\(noOfResults)&key=\(apiKey)")
     }
 
-    static func weatherDataURL(lat: Double, lon: Double) -> URL? {
-        return URL(string: "\(baseURLString)/\(weatherPath)?q=\(lat),\(lon)&num_of_days=1&key=\(apiKey)&format=json")
+    static func weatherDataURL(lat: Double, lon: Double, numberOfDays: Int) -> URL? {
+        return URL(string: "\(baseURLString)/\(weatherPath)?q=\(lat),\(lon)&num_of_days=\(numberOfDays)&key=\(apiKey)&format=json")
     }
 }
