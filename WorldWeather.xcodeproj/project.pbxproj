@@ -43,6 +43,7 @@
 		F1E65D35239CA3C100AC289F /* WeatherDetailsPageConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D34239CA3C100AC289F /* WeatherDetailsPageConfigurator.swift */; };
 		F1E65D37239CA4A000AC289F /* WeatherDetailsPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D36239CA4A000AC289F /* WeatherDetailsPageRouter.swift */; };
 		F1E65D39239CA4BC00AC289F /* SearchPagePageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D38239CA4BC00AC289F /* SearchPagePageRouter.swift */; };
+		F1E65D3B239CA77B00AC289F /* WeatherDetailsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D3A239CA77B00AC289F /* WeatherDetailsPageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		F1E65D34239CA3C100AC289F /* WeatherDetailsPageConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsPageConfigurator.swift; sourceTree = "<group>"; };
 		F1E65D36239CA4A000AC289F /* WeatherDetailsPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsPageRouter.swift; sourceTree = "<group>"; };
 		F1E65D38239CA4BC00AC289F /* SearchPagePageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPagePageRouter.swift; sourceTree = "<group>"; };
+		F1E65D3A239CA77B00AC289F /* WeatherDetailsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsPageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 			children = (
 				F1E65D2A239CA0C100AC289F /* WeatherDetailsPageProtocols.swift */,
 				F1E65D26239C19D200AC289F /* WeatherDetailsPageViewController.swift */,
+				F1E65D3A239CA77B00AC289F /* WeatherDetailsPageViewModel.swift */,
 				F1E65D2E239CA27B00AC289F /* WeatherDetailsPageInteractor.swift */,
 				F1E65D34239CA3C100AC289F /* WeatherDetailsPageConfigurator.swift */,
 				F1E65D30239CA28500AC289F /* WeatherDetailsPagePresenter.swift */,
@@ -401,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1E65D15239BD53200AC289F /* SearchPageProtocols.swift in Sources */,
+				F1E65D3B239CA77B00AC289F /* WeatherDetailsPageViewModel.swift in Sources */,
 				F1E65D33239CA28D00AC289F /* WeatherDetailsPageAPIWorker.swift in Sources */,
 				F1E65D19239BF6E700AC289F /* CitiesTableCellVM.swift in Sources */,
 				F1E65D11239BD4C100AC289F /* SearchPagePresenter.swift in Sources */,
