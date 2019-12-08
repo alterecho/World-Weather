@@ -44,6 +44,7 @@
 		F1E65D37239CA4A000AC289F /* WeatherDetailsPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D36239CA4A000AC289F /* WeatherDetailsPageRouter.swift */; };
 		F1E65D39239CA4BC00AC289F /* SearchPagePageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D38239CA4BC00AC289F /* SearchPagePageRouter.swift */; };
 		F1E65D3B239CA77B00AC289F /* WeatherDetailsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D3A239CA77B00AC289F /* WeatherDetailsPageViewModel.swift */; };
+		F1E65D3E239CD56900AC289F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D3D239CD56900AC289F /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		F1E65D36239CA4A000AC289F /* WeatherDetailsPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsPageRouter.swift; sourceTree = "<group>"; };
 		F1E65D38239CA4BC00AC289F /* SearchPagePageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPagePageRouter.swift; sourceTree = "<group>"; };
 		F1E65D3A239CA77B00AC289F /* WeatherDetailsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsPageViewModel.swift; sourceTree = "<group>"; };
+		F1E65D3D239CD56900AC289F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 				F1E65D04239B5A2800AC289F /* Response.swift */,
 				F1E65D1B239BFA9A00AC289F /* Area.swift */,
 				F1E65D2C239CA16100AC289F /* WeatherModel.swift */,
+				F1E65D3D239CD56900AC289F /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 			files = (
 				F1E65D15239BD53200AC289F /* SearchPageProtocols.swift in Sources */,
 				F1E65D3B239CA77B00AC289F /* WeatherDetailsPageViewModel.swift in Sources */,
+				F1E65D3E239CD56900AC289F /* Location.swift in Sources */,
 				F1E65D33239CA28D00AC289F /* WeatherDetailsPageAPIWorker.swift in Sources */,
 				F1E65D19239BF6E700AC289F /* CitiesTableCellVM.swift in Sources */,
 				F1E65D11239BD4C100AC289F /* SearchPagePresenter.swift in Sources */,
