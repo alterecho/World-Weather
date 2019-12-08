@@ -32,3 +32,7 @@ protocol SearchPageAPIWorkerProtocol {
 protocol SearchPageMappingWorkerProtocol {
     func areasFrom(response: Response.Search) -> [Area]
 }
+
+protocol SearchPagePageRouterProtocol {
+    func gotoWeatherDetails(weather: WeatherModel)
+}
