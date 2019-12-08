@@ -63,14 +63,63 @@
                     <view key="view" contentMode="scaleToFill" id="wpP-pa-SpK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GpJ-Tg-yuU">
+                                <rect key="frame" x="0.0" y="88" width="102" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="3v3-Lk-mrE"/>
+                                    <constraint firstAttribute="width" constant="102" id="GKJ-co-VlU"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WHg-N1-jEq">
+                                <rect key="frame" x="0.0" y="202" width="414" height="49"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="157-rn-Ayb">
+                                        <rect key="frame" x="0.0" y="0.0" width="168.5" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="humidity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwn-Io-tdk">
+                                                <rect key="frame" x="0.0" y="0.0" width="66" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8I4-fx-OLj">
+                                                <rect key="frame" x="74" y="0.0" width="94.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LeF-vi-w88">
+                                        <rect key="frame" x="0.0" y="28.5" width="86" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="snE-nV-SZl" firstAttribute="trailing" secondItem="WHg-N1-jEq" secondAttribute="trailing" id="6if-YM-mdo"/>
+                            <constraint firstItem="WHg-N1-jEq" firstAttribute="top" secondItem="GpJ-Tg-yuU" secondAttribute="bottom" id="RWF-8H-vlk"/>
+                            <constraint firstItem="WHg-N1-jEq" firstAttribute="leading" secondItem="snE-nV-SZl" secondAttribute="leading" id="ahR-un-Tnk"/>
+                            <constraint firstItem="GpJ-Tg-yuU" firstAttribute="top" secondItem="snE-nV-SZl" secondAttribute="top" id="etK-pg-knO"/>
+                            <constraint firstItem="GpJ-Tg-yuU" firstAttribute="leading" secondItem="snE-nV-SZl" secondAttribute="leading" id="rSY-qY-sTL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="snE-nV-SZl"/>
                     </view>
                     <navigationItem key="navigationItem" id="2fh-Ba-RyS"/>
+                    <connections>
+                        <outlet property="humidityLabel" destination="uwn-Io-tdk" id="TXp-mY-CJq"/>
+                        <outlet property="temperatureLabel" destination="8I4-fx-OLj" id="TJ8-Rb-323"/>
+                        <outlet property="weatherDescriptionLabel" destination="LeF-vi-w88" id="MNn-CT-tyr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pdt-9a-PQj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="76"/>
+            <point key="canvasLocation" x="1900.0000000000002" y="75.669642857142847"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zfb-Yt-Xi6">
