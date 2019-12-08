@@ -12,6 +12,12 @@ import UIKit
 class WeatherDetailsPageViewController: UIViewController {
     var output: WeatherDetailsPageInteractorInput?
 
+    var vm: WeatherDetailsPageViewModel? {
+        didSet {
+
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         WeatherDetailsPageConfigurator().configure(viewController: self)

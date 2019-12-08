@@ -16,6 +16,8 @@ class SearchPageViewController: UIViewController {
 
     var output: SearchPageInteractorInput?
 
+    var router: SearchPagePageRouterProtocol?
+
     var cellVMs: [CitiesTableCellVM]? {
         didSet {
             tableView.reloadData()
@@ -50,11 +52,12 @@ extension SearchPageViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: SegueIDs.showWeatherDetails, sender: self)
+        output?.selectedArea(indexPath: indexPath)
     }
 }
 
 extension SearchPageViewController: SearchPagePresenterOutput {
+
     func displayRecentResults(vms: [CitiesTableCellVM]) {
         cellVMs = vms
     }
@@ -62,6 +65,11 @@ extension SearchPageViewController: SearchPagePresenterOutput {
     func displaySearchResults(vms: [CitiesTableCellVM]) {
         cellVMs = vms
     }
+
+    func gotoWeatherDetails(vm: WeatherDetailsPageViewModel) {
+        router?.gotoWeatherDetails(weather: vm)
+    }
+
 }
 
 extension SearchPageViewController: UISearchBarDelegate {

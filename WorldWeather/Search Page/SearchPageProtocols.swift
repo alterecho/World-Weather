@@ -12,16 +12,19 @@ import Foundation
 protocol SearchPageInteractorInput {
     func searchFieldTextChanged(text: String)
     func searchButtonClicked()
+    func selectedArea(indexPath: IndexPath)
 }
 
 protocol SearchPageInteractorOutput {
     func presentRecentCities(areas: [Area])
     func presentSearchResults(areas: [Area])
+    func gotoWeatherDetails(weather: WeatherModel)
 }
 
 protocol SearchPagePresenterOutput: class {
     func displayRecentResults(vms: [CitiesTableCellVM])
     func displaySearchResults(vms: [CitiesTableCellVM])
+    func gotoWeatherDetails(vm: WeatherDetailsPageViewModel)
 }
 
 protocol SearchPageAPIWorkerProtocol {
@@ -34,5 +37,5 @@ protocol SearchPageMappingWorkerProtocol {
 }
 
 protocol SearchPagePageRouterProtocol {
-    func gotoWeatherDetails(weather: WeatherModel)
+    func gotoWeatherDetails(weather: WeatherDetailsPageViewModel)
 }

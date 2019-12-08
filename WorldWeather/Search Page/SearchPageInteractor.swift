@@ -47,5 +47,10 @@ class SearchPageInteractor: SearchPageInteractorInput {
 
     }
 
-
+    func selectedArea(indexPath: IndexPath) {
+        let weatherModel = WeatherModel(temperatureInCentigrade: 0, temperatureInFahrenheit: 0,
+                                        humidity: 0, weatherDescription: nil,
+                                        weatherIconURL: nil)
+        output.gotoWeatherDetails(weather: weatherModel)
+    }
 }

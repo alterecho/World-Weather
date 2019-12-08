@@ -15,7 +15,8 @@ class SearchPagePageRouter: SearchPagePageRouterProtocol {
     init(viewController: SearchPageViewController) {
         self.viewController = viewController
     }
-    func gotoWeatherDetails(weather: WeatherModel) {
+    
+    func gotoWeatherDetails(weather: WeatherDetailsPageViewModel) {
         viewController?.performSegue(withIdentifier: SegueIDs.showWeatherDetails, sender: viewController)
     }
 }

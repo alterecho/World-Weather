@@ -24,4 +24,11 @@ class SearchPagePresenter: SearchPageInteractorOutput {
         let vms = areas.map { CitiesTableCellVM(name: $0.areaName) }
         output?.displaySearchResults(vms: vms)
     }
+
+    func gotoWeatherDetails(weather: WeatherModel) {
+        output?.gotoWeatherDetails(vm: WeatherDetailsPageViewModel(temperatureInCentigrade: 0, temperatureInFahrenheit: 0, humidity: 0, weatherDescription: nil, weatherIconURL: nil))
+
+    }
 }
+
+

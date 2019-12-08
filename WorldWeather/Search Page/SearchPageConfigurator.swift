@@ -12,6 +12,9 @@ class SearchPageConfigurator {
     func configure(viewController: SearchPageViewController) {
         let presenter = SearchPagePresenter(output: viewController)
         let interactor = SearchPageInteractor(output: presenter)
+
+        viewController.router = SearchPagePageRouter(viewController: viewController)
         viewController.output = interactor
+
     }
 }
