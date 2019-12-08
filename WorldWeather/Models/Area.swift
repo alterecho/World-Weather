@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Area {
+struct Area: Codable {
     let areaName: String
     let country: String
     let region: String

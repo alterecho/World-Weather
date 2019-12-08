@@ -24,14 +24,6 @@ class LoadIndicator: UIView {
         }
     }
 
-//    init(view: UIView) {
-//        super.init(frame: .zero)
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        super.init(coder: coder)
-//    }
-
     override func layoutSubviews() {
         super.layoutSubviews()
         backgroundColor = UIColor.black.withAlphaComponent(0.375)
