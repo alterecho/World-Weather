@@ -6,12 +6,11 @@
 //  Copyright © 2019 v.a.jayachandran. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct WeatherDetailsPageViewModel {
-    let temperatureInCentigrade: Double
-    let temperatureInFahrenheit: Double
-    let humidity: Double
-    let weatherDescription: String?
-    let weatherIconURL: URL?
+    let temperatureLabelText: String?
+    let humidityLabelText: String?
+    let weatherDescriptionLabelText: String?
+    let weatherIcon: UIImage?
 }

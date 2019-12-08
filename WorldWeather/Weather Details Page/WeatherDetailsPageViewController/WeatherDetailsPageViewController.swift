@@ -10,11 +10,19 @@
 import UIKit
 
 class WeatherDetailsPageViewController: UIViewController {
-    var output: WeatherDetailsPageInteractorInput?
 
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var weatherDescriptionLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+
+
+    var output: WeatherDetailsPageInteractorInput?
+    
     private var vm: WeatherDetailsPageViewModel? {
         didSet {
-
+            temperatureLabel.text = vm?.temperatureLabelText
+            weatherDescriptionLabel.text = vm?.weatherDescriptionLabelText
+            humidityLabel.text = vm?.humidityLabelText
         }
     }
 
@@ -36,7 +44,7 @@ class WeatherDetailsPageViewController: UIViewController {
 }
 
 extension WeatherDetailsPageViewController: WeatherDetailsPagePresenterOutput {
-    func display(weather: WeatherModel) {
-        
+    func display(vm: WeatherDetailsPageViewModel) {
+        self.vm = vm
     }
 }

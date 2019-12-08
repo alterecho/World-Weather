@@ -15,9 +15,14 @@ protocol WeatherDetailsPagePresenterInput {
 }
 
 protocol WeatherDetailsPagePresenterOutput: class {
-    func display(weather: WeatherModel)
+    func display(vm: WeatherDetailsPageViewModel)
 }
 
 protocol WeatherDetailsPageAPIWorkerProtocol {
     func fetchWeatherDetails(location: Location, numberOfDays: Int, completionHandler: @escaping (Response.WeatherData?, Swift.Error?) -> Void)
+}
+
+protocol WeatherDetailsPageMappingWorkerProtocol {
+    func weather(from response: Response.WeatherData) -> WeatherModel?
+
 }
