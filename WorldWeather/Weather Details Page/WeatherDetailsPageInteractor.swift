@@ -10,11 +10,12 @@ import Foundation
 
 class WeatherDetailsPageInteractor: WeatherDetailsPageInteractorInput {
 
-    let output: WeatherDetailsPagePresenterInput
-    private let apiWorker = WeatherDetailsPageAPIWorker()
+    let output: WeatherDetailsPageInteractorOutput
+    private let apiWorker: WeatherDetailsPageAPIWorkerProtocol
     private let mappingWorker = WeatherDetailsPageMappingWorker()
 
-    init(output: WeatherDetailsPagePresenterInput) {
+    init(output: WeatherDetailsPageInteractorOutput, apiWorker: WeatherDetailsPageAPIWorkerProtocol = WeatherDetailsPageAPIWorker()) {
+        self.apiWorker = apiWorker
         self.output = output
     }
 

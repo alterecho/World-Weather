@@ -10,7 +10,7 @@ protocol WeatherDetailsPageInteractorInput {
     func load(area: Area?)
 }
 
-protocol WeatherDetailsPagePresenterInput {
+protocol WeatherDetailsPageInteractorOutput {
     func present(weather: WeatherModel)
     func showLoading()
     func hideLoading()

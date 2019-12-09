@@ -8,7 +8,7 @@
 
 import Foundation
 
-class WeatherDetailsPagePresenter: WeatherDetailsPagePresenterInput {
+class WeatherDetailsPagePresenter: WeatherDetailsPageInteractorOutput {
     func showLoading() {
         output?.showLoading()
     }

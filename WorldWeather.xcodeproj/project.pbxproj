@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F169BAE9239EA4A000FE8DAC /* WeatherDetailsPageInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F169BAE8239EA4A000FE8DAC /* WeatherDetailsPageInteractorTests.swift */; };
 		F1CAD32B23994FC500670B1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CAD32A23994FC500670B1C /* AppDelegate.swift */; };
 		F1CAD32D23994FC500670B1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CAD32C23994FC500670B1C /* SceneDelegate.swift */; };
 		F1CAD32F23994FC500670B1C /* SearchPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CAD32E23994FC500670B1C /* SearchPageViewController.swift */; };
@@ -71,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F169BAE8239EA4A000FE8DAC /* WeatherDetailsPageInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsPageInteractorTests.swift; sourceTree = "<group>"; };
 		F1CAD32723994FC500670B1C /* WorldWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CAD32A23994FC500670B1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1CAD32C23994FC500670B1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F169BAEA239EA64300FE8DAC /* WeatherDetailsPage */ = {
+			isa = PBXGroup;
+			children = (
+				F169BAE8239EA4A000FE8DAC /* WeatherDetailsPageInteractorTests.swift */,
+			);
+			path = WeatherDetailsPage;
+			sourceTree = "<group>";
+		};
 		F1CAD31E23994FC500670B1C = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +210,7 @@
 				F1CAD34423994FC500670B1C /* ResponseDecodingTests.swift */,
 				F1E65D48239D3C7500AC289F /* DataStoreTests.swift */,
 				F1E65D4C239DBF8900AC289F /* SearchPage */,
+				F169BAEA239EA64300FE8DAC /* WeatherDetailsPage */,
 				F1CAD34623994FC500670B1C /* Info.plist */,
 			);
 			path = WorldWeatherTests;
@@ -489,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1E65D0A239B764100AC289F /* Errors.swift in Sources */,
+				F169BAE9239EA4A000FE8DAC /* WeatherDetailsPageInteractorTests.swift in Sources */,
 				F1CAD34523994FC500670B1C /* ResponseDecodingTests.swift in Sources */,
 				F1E65D49239D3C7500AC289F /* DataStoreTests.swift in Sources */,
 				F1E65D4B239DBF8000AC289F /* SearchPageInteractorTests.swift in Sources */,

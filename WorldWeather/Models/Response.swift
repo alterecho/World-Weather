@@ -86,7 +86,7 @@ class Response {
                 throw Error.decodeError(description: "Unable to decode data \(data)")
             }
             guard let dataJSON = json[CodingKeys.data.rawValue] as? [String: Any] else {
-                throw Error.decodeError(description: "Unable to decode data")
+                throw Error.decodeError(description: "Unable to load key \(CodingKeys.data.rawValue)")
             }
 
             guard let currentConditionDict = dataJSON[CodingKeys.currentCondition.rawValue] as? [[String: Any]] else {

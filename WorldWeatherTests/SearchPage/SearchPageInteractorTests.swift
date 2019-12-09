@@ -6,13 +6,11 @@
 //  Copyright © 2019 v.a.jayachandran. All rights reserved.
 //
 
-import Foundation
-
 import XCTest
 @testable import WorldWeather
 
 class SearchPageInteractorTests: XCTestCase {
-    var interactor: SearchPageInteractorInput?
+    private var interactor: SearchPageInteractorInput?
 
     var recentCitiesExpectaion: XCTestExpectation?
     var gotoWeatherDetailsExpectation: XCTestExpectation?
