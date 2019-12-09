@@ -34,7 +34,6 @@ protocol SearchPagePresenterOutput: class {
 
 protocol SearchPageAPIWorkerProtocol {
     func fetchSearchResults(for searchString: String, noOfResults: Int, completionHandler: @escaping (Response.Search?, Swift.Error?) -> Void)
-    init(session: URLSession)
 }
 
 protocol SearchPageMappingWorkerProtocol {

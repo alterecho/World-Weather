@@ -22,9 +22,12 @@ class SearchPageInteractor: SearchPageInteractorInput {
 
     private var searchText: String?
 
-    init(output: SearchPageInteractorOutput) {
-        apiWorker = SearchPageAPIWorker()
-        mappingWorker = SearchPageMappingWorker()
+    init(output: SearchPageInteractorOutput,
+         apiWorker: SearchPageAPIWorkerProtocol = SearchPageAPIWorker(),
+         mappingWorker: SearchPageMappingWorkerProtocol = SearchPageMappingWorker(),
+        dataStore: DataStore = DataStore.shared) {
+        self.apiWorker = apiWorker
+        self.mappingWorker = mappingWorker
         self.output = output
     }
 
