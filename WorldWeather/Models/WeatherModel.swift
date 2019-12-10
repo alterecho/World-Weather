@@ -13,5 +13,5 @@ struct WeatherModel {
     let temperatureInFahrenheit: Double
     let humidity: Double
     let weatherDescription: String?
-    let weatherIconURL: URL?
+    var weatherIconURL: URL?
 }

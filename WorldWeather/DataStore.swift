@@ -29,4 +29,11 @@ class DataStore {
 
         return try PropertyListDecoder().decode([Area].self, from: data)
     }
+
+    func cache(data: Data, filename: String) throws -> URL {
+        let temporaryImagePath = NSTemporaryDirectory().appending(filename)
+        let temporaryURL = URL(fileURLWithPath: temporaryImagePath)
+        try data.write(to: temporaryURL)
+        return temporaryURL
+    }
 }

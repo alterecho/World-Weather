@@ -9,6 +9,16 @@
 import Foundation
 
 class WeatherDetailsPageAPIWorker: WeatherDetailsPageAPIWorkerProtocol {
+    func downloadData(url: URL, completionHandler: @escaping (Data?, Swift.Error?) -> Void) {
+        let request = URLRequest(url: url)
+        session.dataTask(with: request, completionHandler: { (data, response, error) in
+            DispatchQueue.main.async {
+                completionHandler(data, error)
+            }
+
+            }).resume()
+    }
+    
     let session: URLSession
 
     init(session: URLSession = URLSession.shared) {
