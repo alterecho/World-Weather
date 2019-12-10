@@ -11,19 +11,23 @@ import Foundation
 class SearchPagePresenter: SearchPageInteractorOutput {
 
     weak var output: SearchPagePresenterOutput?
+    private var vm: SearchPageViewModel
 
     init(output: SearchPagePresenterOutput) {
         self.output = output
+        vm = SearchPageViewModel(title: "Search", searchBarPlaceholder: "Enter area to search", searchBarText: nil, tableTitle: "Recent", cells: [])
     }
 
     func presentRecentCities(areas: [Area]) {
-        let vms = areas.map { CitiesTableCellVM(name: $0.areaName) }
-        output?.displayRecentResults(vms: vms)
+        vm.tableTitle = "Recently viewed"
+        vm.cells = areas.map { CitiesTableCellVM(name: $0.areaName) }
+        output?.display(vm: vm)
     }
 
     func presentSearchResults(areas: [Area]) {
-        let vms = areas.map { CitiesTableCellVM(name: $0.areaName) }
-        output?.displaySearchResults(vms: vms)
+        vm.tableTitle = "Results"
+        vm.cells = areas.map { CitiesTableCellVM(name: $0.areaName) }
+        output?.display(vm: vm)
     }
 
     func gotoWeatherDetails(for area: Area) {

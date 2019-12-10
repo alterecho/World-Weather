@@ -32,8 +32,6 @@ class SearchPageInteractor: SearchPageInteractorInput {
     }
 
     func load() {
-        //        searchText = "new"
-        //        searchButtonClicked()
         do {
             recentAreas = try DataStore.shared.loadRecents() ?? []
         } catch {

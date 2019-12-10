@@ -25,8 +25,7 @@ protocol SearchPageInteractorOutput {
 }
 
 protocol SearchPagePresenterOutput: class {
-    func displayRecentResults(vms: [CitiesTableCellVM])
-    func displaySearchResults(vms: [CitiesTableCellVM])
+    func display(vm: SearchPageViewModel)
     func gotoWeatherDetails(area: Area)
     func showLoading()
     func hideLoading()

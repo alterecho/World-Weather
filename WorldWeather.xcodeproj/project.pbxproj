@@ -20,6 +20,8 @@
 		F1CAD35E2399D59700670B1C /* Mobile_developer_technical_test.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F1CAD35D2399D59700670B1C /* Mobile_developer_technical_test.pdf */; };
 		F1D3281B239FB2DE006B5AF9 /* WeatherDetailsPagePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D3281A239FB2DE006B5AF9 /* WeatherDetailsPagePresenterTests.swift */; };
 		F1D3281D239FB3DF006B5AF9 /* BaseWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D3281C239FB3DF006B5AF9 /* BaseWeatherTests.swift */; };
+		F1D3282D239FEB8B006B5AF9 /* SearchPageViewController+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D3282C239FEB8B006B5AF9 /* SearchPageViewController+Delegates.swift */; };
+		F1D3282F239FED53006B5AF9 /* SearchPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D3282E239FED53006B5AF9 /* SearchPageViewModel.swift */; };
 		F1E65D01239B4D2600AC289F /* mock-search.json in Resources */ = {isa = PBXBuildFile; fileRef = F1E65CFF239B4D2600AC289F /* mock-search.json */; };
 		F1E65D02239B4D2600AC289F /* mock-weather.json in Resources */ = {isa = PBXBuildFile; fileRef = F1E65D00239B4D2600AC289F /* mock-weather.json */; };
 		F1E65D05239B5A2800AC289F /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D04239B5A2800AC289F /* Response.swift */; };
@@ -93,6 +95,8 @@
 		F1CAD35D2399D59700670B1C /* Mobile_developer_technical_test.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Mobile_developer_technical_test.pdf; sourceTree = "<group>"; };
 		F1D3281A239FB2DE006B5AF9 /* WeatherDetailsPagePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsPagePresenterTests.swift; sourceTree = "<group>"; };
 		F1D3281C239FB3DF006B5AF9 /* BaseWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWeatherTests.swift; sourceTree = "<group>"; };
+		F1D3282C239FEB8B006B5AF9 /* SearchPageViewController+Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchPageViewController+Delegates.swift"; sourceTree = "<group>"; };
+		F1D3282E239FED53006B5AF9 /* SearchPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageViewModel.swift; sourceTree = "<group>"; };
 		F1E65CFF239B4D2600AC289F /* mock-search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mock-search.json"; sourceTree = "<group>"; };
 		F1E65D00239B4D2600AC289F /* mock-weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mock-weather.json"; sourceTree = "<group>"; };
 		F1E65D04239B5A2800AC289F /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -252,7 +256,9 @@
 			isa = PBXGroup;
 			children = (
 				F1E65D14239BD53200AC289F /* SearchPageProtocols.swift */,
+				F1D3282E239FED53006B5AF9 /* SearchPageViewModel.swift */,
 				F1CAD32E23994FC500670B1C /* SearchPageViewController.swift */,
+				F1D3282C239FEB8B006B5AF9 /* SearchPageViewController+Delegates.swift */,
 				F1E65D0E239BD4AC00AC289F /* SearchPageInteractor.swift */,
 				F1E65D10239BD4C100AC289F /* SearchPagePresenter.swift */,
 				F1E65D21239C030900AC289F /* SearchPageConfigurator.swift */,
@@ -467,6 +473,7 @@
 			files = (
 				F1E65D15239BD53200AC289F /* SearchPageProtocols.swift in Sources */,
 				F1E65D3B239CA77B00AC289F /* WeatherDetailsPageViewModel.swift in Sources */,
+				F1D3282F239FED53006B5AF9 /* SearchPageViewModel.swift in Sources */,
 				F1E65D3E239CD56900AC289F /* Location.swift in Sources */,
 				F1E65D33239CA28D00AC289F /* WeatherDetailsPageAPIWorker.swift in Sources */,
 				F1E65D47239D383600AC289F /* DataStore.swift in Sources */,
@@ -494,6 +501,7 @@
 				F1E65D24239C049600AC289F /* API.swift in Sources */,
 				F1E65D17239BF6C800AC289F /* CitiesTableCell.swift in Sources */,
 				F1E65D27239C19D200AC289F /* WeatherDetailsPageViewController.swift in Sources */,
+				F1D3282D239FEB8B006B5AF9 /* SearchPageViewController+Delegates.swift in Sources */,
 				F1E65D22239C030900AC289F /* SearchPageConfigurator.swift in Sources */,
 				F1E65D09239B757700AC289F /* Errors.swift in Sources */,
 				F1E65D31239CA28500AC289F /* WeatherDetailsPagePresenter.swift in Sources */,

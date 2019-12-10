@@ -10,7 +10,7 @@ import UIKit
 
 class SearchPageViewController: UIViewController {
 
-    private static let cellID = "cellID"
+    static let cellID = "cellID"
     @IBOutlet weak var searchField: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadIndicator: LoadIndicator!
@@ -18,8 +18,12 @@ class SearchPageViewController: UIViewController {
 
     var router: SearchPagePageRouterProtocol?
 
-    var cellVMs: [CitiesTableCellVM]? {
+    // view model for the view
+    var vm: SearchPageViewModel? {
         didSet {
+            title = vm?.title
+            searchField.placeholder = vm?.searchBarPlaceholder
+            searchField.text = vm?.searchBarText
             tableView.reloadData()
         }
     }
@@ -28,7 +32,10 @@ class SearchPageViewController: UIViewController {
         super.viewDidLoad()
         SearchPageConfigurator().configure(viewController: self)
         tableView.register(CitiesTableCell.self, forCellReuseIdentifier: SearchPageViewController.cellID)
-        
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         output?.load()
     }
 
@@ -37,31 +44,12 @@ class SearchPageViewController: UIViewController {
     }
 }
 
-extension SearchPageViewController: UITableViewDataSource, UITableViewDelegate {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cellVMs?.count ?? 0
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchPageViewController.cellID, for: indexPath) as? CitiesTableCell else {
-            return UITableViewCell()
-        }
-
-        cell.vm = cellVMs?[indexPath.row]
-
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        output?.selectedArea(indexPath: indexPath)
-    }
-}
 
 extension SearchPageViewController: SearchPagePresenterOutput {
+    func display(vm: SearchPageViewModel) {
+        self.vm = vm
+    }
+
     func showLoading() {
         loadIndicator.isLoading = true
     }
@@ -70,28 +58,7 @@ extension SearchPageViewController: SearchPagePresenterOutput {
         loadIndicator.isLoading = false
     }
 
-
-    func displayRecentResults(vms: [CitiesTableCellVM]) {
-        cellVMs = vms
-    }
-
-    func displaySearchResults(vms: [CitiesTableCellVM]) {
-        cellVMs = vms
-    }
-
     func gotoWeatherDetails(area: Area) {
         router?.gotoWeatherDetails(area: area)
-    }
-
-}
-
-extension SearchPageViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        output?.searchFieldTextChanged(text: searchText)
-    }
-
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        output?.searchButtonClicked()
     }
 }
