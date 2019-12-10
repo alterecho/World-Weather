@@ -46,6 +46,10 @@ class SearchPageViewController: UIViewController {
 
 
 extension SearchPageViewController: SearchPagePresenterOutput {
+    func showAlert(title: String?, message: String) {
+        AlertSystem.alert(title: title, message: message)
+    }
+    
     func display(vm: SearchPageViewModel) {
         self.vm = vm
     }

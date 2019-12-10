@@ -12,16 +12,12 @@ protocol WeatherDetailsPageInteractorInput {
     func load(area: Area?)
 }
 
-protocol WeatherDetailsPageInteractorOutput {
+protocol WeatherDetailsPageInteractorOutput: PageProtocols {
     func present(weather: WeatherModel)
-    func showLoading()
-    func hideLoading()
 }
 
-protocol WeatherDetailsPagePresenterOutput: class {
+protocol WeatherDetailsPagePresenterOutput: class, PageProtocols {
     func display(vm: WeatherDetailsPageViewModel)
-    func showLoading()
-    func hideLoading()
 }
 
 protocol WeatherDetailsPageAPIWorkerProtocol {

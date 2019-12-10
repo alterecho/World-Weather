@@ -42,6 +42,11 @@ class SearchPagePresenter: SearchPageInteractorOutput {
         output?.hideLoading()
     }
 
+    func showAlert(title: String?, message: String) {
+        output?.showAlert(title: title, message: message)
+    }
+
+
 }
 
 

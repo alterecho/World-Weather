@@ -17,6 +17,9 @@ class WeatherDetailsPagePresenter: WeatherDetailsPageInteractorOutput {
         output?.hideLoading()
     }
 
+    func showAlert(title: String?, message: String) {
+        output?.showAlert(title: title, message: message)
+    }
 
     weak var output: WeatherDetailsPagePresenterOutput?
     init(output: WeatherDetailsPagePresenterOutput) {

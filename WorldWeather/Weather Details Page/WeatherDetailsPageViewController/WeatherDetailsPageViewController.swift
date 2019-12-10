@@ -71,6 +71,10 @@ class WeatherDetailsPageViewController: UIViewController {
 }
 
 extension WeatherDetailsPageViewController: WeatherDetailsPagePresenterOutput {
+    func showAlert(title: String?, message: String) {
+        AlertSystem.alert(title: title, message: message)
+    }
+    
     func showLoading() {
         loadIndicator.isLoading = true
     }

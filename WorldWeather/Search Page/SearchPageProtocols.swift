@@ -16,19 +16,15 @@ protocol SearchPageInteractorInput {
     func selectedArea(indexPath: IndexPath)
 }
 
-protocol SearchPageInteractorOutput {
+protocol SearchPageInteractorOutput: PageProtocols {
     func presentRecentCities(areas: [Area])
     func presentSearchResults(areas: [Area])
     func gotoWeatherDetails(for area: Area)
-    func showLoading()
-    func hideLoading()
 }
 
-protocol SearchPagePresenterOutput: class {
+protocol SearchPagePresenterOutput: class, PageProtocols {
     func display(vm: SearchPageViewModel)
     func gotoWeatherDetails(area: Area)
-    func showLoading()
-    func hideLoading()
 }
 
 protocol SearchPageAPIWorkerProtocol {
