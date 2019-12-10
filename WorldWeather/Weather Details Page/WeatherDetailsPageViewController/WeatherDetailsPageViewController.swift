@@ -31,7 +31,9 @@ class WeatherDetailsPageViewController: UIViewController {
                 DispatchQueue.global(qos: .background).async {
                     do {
                         let data = try Data(contentsOf: url)
-                        self.weatherIconImageView.image = UIImage(data: data)
+                        DispatchQueue.main.async {
+                            self.weatherIconImageView.image = UIImage(data: data)
+                        }
                     } catch {
                         print(error)
                     }
