@@ -53,7 +53,6 @@ private class MockAPIWorker: WeatherDetailsPageAPIWorkerProtocol {
 
         do {
             let data = try Helpers.data(from: "mock-weather", ext: "json")
-            let str = String(data: data, encoding: .utf8)
             let response = try Response.WeatherData(data: data)
             completionHandler(response, nil)
         } catch {
