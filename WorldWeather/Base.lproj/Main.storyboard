@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R0u-qZ-n6L">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -74,55 +75,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GpJ-Tg-yuU">
-                                <rect key="frame" x="0.0" y="88" width="102" height="114"/>
+                                <rect key="frame" x="103.5" y="88" width="207" height="207"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="114" id="3v3-Lk-mrE"/>
-                                    <constraint firstAttribute="width" constant="102" id="GKJ-co-VlU"/>
+                                    <constraint firstAttribute="width" secondItem="GpJ-Tg-yuU" secondAttribute="height" id="qeU-w8-Cwc"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WHg-N1-jEq">
-                                <rect key="frame" x="0.0" y="202" width="414" height="49"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WHg-N1-jEq">
+                                <rect key="frame" x="0.0" y="315" width="414" height="95"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="157-rn-Ayb">
-                                        <rect key="frame" x="0.0" y="0.0" width="168.5" height="20.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="humidity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwn-Io-tdk">
-                                                <rect key="frame" x="0.0" y="0.0" width="66" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8I4-fx-OLj">
-                                                <rect key="frame" x="74" y="0.0" width="94.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="humidity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwn-Io-tdk">
+                                        <rect key="frame" x="181" y="0.0" width="52.5" height="16"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8I4-fx-OLj">
+                                        <rect key="frame" x="101.5" y="24" width="211.5" height="36.5"/>
+                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LeF-vi-w88">
-                                        <rect key="frame" x="0.0" y="28.5" width="86" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="154" y="68.5" width="106.5" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8z6-jY-RTJ" customClass="LoadIndicator" customModule="WorldWeather" customModuleProvider="target">
+                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8z6-jY-RTJ" customClass="LoadIndicator" customModule="WorldWeather" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="GpJ-Tg-yuU" firstAttribute="width" secondItem="wpP-pa-SpK" secondAttribute="width" multiplier="0.5" id="6gV-7x-2gt"/>
                             <constraint firstItem="snE-nV-SZl" firstAttribute="trailing" secondItem="WHg-N1-jEq" secondAttribute="trailing" id="6if-YM-mdo"/>
                             <constraint firstItem="8z6-jY-RTJ" firstAttribute="leading" secondItem="snE-nV-SZl" secondAttribute="leading" id="936-7R-9R1"/>
                             <constraint firstItem="8z6-jY-RTJ" firstAttribute="top" secondItem="snE-nV-SZl" secondAttribute="top" id="JRu-vt-Fda"/>
-                            <constraint firstItem="WHg-N1-jEq" firstAttribute="top" secondItem="GpJ-Tg-yuU" secondAttribute="bottom" id="RWF-8H-vlk"/>
+                            <constraint firstItem="WHg-N1-jEq" firstAttribute="top" secondItem="GpJ-Tg-yuU" secondAttribute="bottom" constant="20" id="RWF-8H-vlk"/>
                             <constraint firstItem="WHg-N1-jEq" firstAttribute="leading" secondItem="snE-nV-SZl" secondAttribute="leading" id="ahR-un-Tnk"/>
-                            <constraint firstItem="GpJ-Tg-yuU" firstAttribute="top" secondItem="snE-nV-SZl" secondAttribute="top" id="etK-pg-knO"/>
+                            <constraint firstItem="GpJ-Tg-yuU" firstAttribute="top" secondItem="snE-nV-SZl" secondAttribute="top" id="h9h-4o-mdR"/>
                             <constraint firstItem="snE-nV-SZl" firstAttribute="bottom" secondItem="8z6-jY-RTJ" secondAttribute="bottom" id="jjl-9h-vDA"/>
-                            <constraint firstItem="GpJ-Tg-yuU" firstAttribute="leading" secondItem="snE-nV-SZl" secondAttribute="leading" id="rSY-qY-sTL"/>
+                            <constraint firstItem="GpJ-Tg-yuU" firstAttribute="centerX" secondItem="snE-nV-SZl" secondAttribute="centerX" id="syY-V2-jWA"/>
                             <constraint firstItem="snE-nV-SZl" firstAttribute="trailing" secondItem="8z6-jY-RTJ" secondAttribute="trailing" id="uaF-xB-Zey"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="snE-nV-SZl"/>
@@ -134,6 +130,7 @@
                         <outlet property="temperatureLabel" destination="8I4-fx-OLj" id="TJ8-Rb-323"/>
                         <outlet property="weatherDescriptionLabel" destination="LeF-vi-w88" id="MNn-CT-tyr"/>
                         <outlet property="weatherIconImageView" destination="GpJ-Tg-yuU" id="rCD-ER-N6K"/>
+                        <outlet property="weatherIconImageViewYConstraint" destination="h9h-4o-mdR" id="mYp-wV-VTR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pdt-9a-PQj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

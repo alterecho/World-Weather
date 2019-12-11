@@ -11,6 +11,8 @@ import UIKit
 
 class WeatherDetailsPageViewController: UIViewController {
 
+    @IBOutlet weak var weatherIconImageViewYConstraint: NSLayoutConstraint!
+
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
@@ -41,7 +43,7 @@ class WeatherDetailsPageViewController: UIViewController {
             } else {
                 weatherIconImageView.image = nil
             }
-
+            self.animate()
         }
     }
 
@@ -61,12 +63,56 @@ class WeatherDetailsPageViewController: UIViewController {
         (area = area)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        resetForAnimation()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+//            self.animate()
+        }
+
+    }
+
     var area: Area? {
         didSet {
             if isViewLoaded {
                 output?.load(area: area)
             }
         }
+    }
+
+    private func resetForAnimation() {
+        // set initial values for animation
+        weatherIconImageViewYConstraint.constant = -weatherIconImageView.frame.height
+        self.temperatureLabel.alpha = 0.0
+        self.weatherDescriptionLabel.alpha = 0.0
+        self.humidityLabel.alpha = 0.0
+
+    }
+
+    private func animate() {
+        resetForAnimation()
+        view.layoutIfNeeded()
+        self.weatherIconImageViewYConstraint.constant = 100.0
+        weatherIconImageView.needsUpdateConstraints()
+
+        UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 12.0, initialSpringVelocity: 12.0, options: .curveEaseIn, animations: {
+            self.view.layoutIfNeeded()
+        }) { (completed) in
+            UIView.animate(withDuration: 0.375, animations: {
+                self.temperatureLabel.alpha = 1.0
+            }) { (completed) in
+                UIView.animate(withDuration: 0.75, animations: {
+                    self.weatherDescriptionLabel.alpha = 1.0
+                    self.humidityLabel.alpha = 1.0
+                })
+            }
+        }
+
+
     }
 }
 
