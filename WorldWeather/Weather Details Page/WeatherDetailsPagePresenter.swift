@@ -28,7 +28,7 @@ class WeatherDetailsPagePresenter: WeatherDetailsPageInteractorOutput {
 
     func present(weather: WeatherModel) {
         let vm = WeatherDetailsPageViewModel(
-            temperatureLabelText: "\(weather.temperatureInCentigrade)",
+            temperatureLabelText: "\(weather.temperatureInCentigrade) °C",
             humidityLabelText: "\(weather.humidity)",
             weatherDescriptionLabelText: weather.weatherDescription,
             weatherIcon: weather.weatherIconURL)

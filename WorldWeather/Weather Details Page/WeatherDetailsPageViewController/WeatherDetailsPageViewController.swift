@@ -99,7 +99,7 @@ class WeatherDetailsPageViewController: UIViewController {
         self.weatherIconImageViewYConstraint.constant = 100.0
         weatherIconImageView.needsUpdateConstraints()
 
-        UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 12.0, initialSpringVelocity: 12.0, options: .curveEaseIn, animations: {
+        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 12.0, initialSpringVelocity: 12.0, options: .curveEaseIn, animations: {
             self.view.layoutIfNeeded()
         }) { (completed) in
             UIView.animate(withDuration: 0.375, animations: {
