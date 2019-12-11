@@ -192,8 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				F1CAD32A23994FC500670B1C /* AppDelegate.swift */,
-				F1E65D0B239B770600AC289F /* Helpers.swift */,
 				F1CAD32C23994FC500670B1C /* SceneDelegate.swift */,
+				F1E65D0B239B770600AC289F /* Helpers.swift */,
 				F1E65D28239C1A2D00AC289F /* SegueIDs.swift */,
 				F1E65D23239C049600AC289F /* API.swift */,
 				F1E65D42239CFA5B00AC289F /* AlertSystem.swift */,
@@ -690,6 +690,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WorldWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -707,6 +708,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WorldWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
