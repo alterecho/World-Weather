@@ -12,5 +12,4 @@ enum Error: Swift.Error {
     case urlNotFound(description: String? = nil)
     case nilValue(description: String? = nil)
     case decodeError(description: String? = nil)
-
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 class Helpers {
-    static func data(from filename: String, ext: String) throws -> Data {
+    static func data(from filename: String?, ext: String?) throws -> Data {
         if let url = Bundle.main.url(forResource: filename, withExtension: ext) {
             return try Data(contentsOf: url)
         }
