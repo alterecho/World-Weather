@@ -9,6 +9,12 @@
 import Foundation
 
 class DataStore {
+
+    /// To save the order info of the area we save, since we use a dictionary to avoid duplicates
+    private struct OrderedArea: Codable {
+        let order: Int
+        let area: Area
+    }
     
     static let shared = DataStore()
 
@@ -19,7 +25,14 @@ class DataStore {
     }
 
     func saveRecents(areas: [Area]) throws {
-        UserDefaults.standard.set(try PropertyListEncoder().encode(areas), forKey: recentAreasListKey)
+        var dictionary = [String: OrderedArea]()
+        for i in (0..<areas.count).reversed() {
+            let area = areas[i]
+            let element = OrderedArea(order: i, area: area)
+            dictionary[area.areaName] = element
+        }
+
+        UserDefaults.standard.set(try PropertyListEncoder().encode(dictionary), forKey: recentAreasListKey)
     }
 
     func loadRecents() throws -> [Area]? {
@@ -27,7 +40,11 @@ class DataStore {
             throw Error.decodeError(description: "Unable to retrieve data for recent areas")
         }
 
-        return try PropertyListDecoder().decode([Area].self, from: data)
+        let orderedAreasDictionary = try PropertyListDecoder().decode([String: OrderedArea].self, from: data)
+        var orderedAreaElement = orderedAreasDictionary.map { $0.value }
+        orderedAreaElement.sort { $0.order < $1.order}
+        let areas = orderedAreaElement.map { $0.area }
+        return areas
     }
 
     func cache(data: Data, filename: String) throws -> URL {
