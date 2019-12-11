@@ -54,6 +54,10 @@ class WeatherDetailsPagePresenterTests: WeatherTestsBaseClass {
 }
 
 extension WeatherDetailsPagePresenterTests:  WeatherDetailsPagePresenterOutput {
+    func showAlert(title: String?, message: String) {
+        
+    }
+
     func display(vm: WeatherDetailsPageViewModel) {
         displayVMCalledExpectation?.fulfill()
     }

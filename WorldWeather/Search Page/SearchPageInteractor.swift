@@ -55,7 +55,8 @@ class SearchPageInteractor: SearchPageInteractorInput {
                     self?.displayedAreas = self?.mappingWorker.areasFrom(response: searchResponse) ?? []
                     self?.output.presentSearchResults(areas: self?.displayedAreas ?? [])
                 } else {
-                    self?.output.presentSearchResults(areas: [])
+                    self?.displayedAreas = self?.recentAreas ?? []
+                    self?.output.presentRecentCities(areas: self?.displayedAreas ?? [])
                     AlertSystem.alert(title: "Error", message: error?.localizedDescription)
                 }
                 self?.output.hideLoading()

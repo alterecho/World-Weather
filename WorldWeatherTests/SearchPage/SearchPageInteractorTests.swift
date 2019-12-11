@@ -49,6 +49,10 @@ class SearchPageInteractorTests: XCTestCase {
 }
 
 extension SearchPageInteractorTests: SearchPageInteractorOutput {
+    func showAlert(title: String?, message: String) {
+        
+    }
+
     func presentRecentCities(areas: [Area]) {
         recentCitiesExpectaion?.fulfill()
     }

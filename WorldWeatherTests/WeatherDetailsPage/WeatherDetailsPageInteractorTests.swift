@@ -35,6 +35,10 @@ class WeatherDetailsPageInteractorTests: XCTestCase {
 }
 
 extension WeatherDetailsPageInteractorTests:  WeatherDetailsPageInteractorOutput {
+    func showAlert(title: String?, message: String) {
+        
+    }
+
     func present(weather: WeatherModel) {
         presentWeatherExpectation?.fulfill()
     }
@@ -49,6 +53,9 @@ extension WeatherDetailsPageInteractorTests:  WeatherDetailsPageInteractorOutput
 }
 
 private class MockAPIWorker: WeatherDetailsPageAPIWorkerProtocol {
+    func downloadData(url: URL, completionHandler: @escaping (Data?, Error?) -> Void) {
+    }
+
     func fetchWeatherDetails(location: Location, numberOfDays: Int, completionHandler: @escaping (Response.WeatherData?, Swift.Error?) -> Void) {
 
         do {

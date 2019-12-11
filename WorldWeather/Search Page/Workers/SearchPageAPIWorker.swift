@@ -18,7 +18,8 @@ class SearchPageAPIWorker: SearchPageAPIWorkerProtocol {
 
     func fetchSearchResults(for searchString: String, noOfResults: Int, completionHandler: @escaping (Response.Search?, Swift.Error?) -> Void) {
         guard let url = API.searchURL(for: searchString, noOfResults: noOfResults) else {
-            AlertSystem.alert(title: "Error", message: "Error forming URL for search")
+            completionHandler(nil, NSError(domain: "URL", code: 1,
+                                           userInfo: [NSLocalizedDescriptionKey : "Error forming URL for search"]))
             return
         }
         
