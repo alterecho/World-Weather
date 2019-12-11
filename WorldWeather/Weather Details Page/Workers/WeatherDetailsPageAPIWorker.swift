@@ -9,20 +9,11 @@
 import Foundation
 
 class WeatherDetailsPageAPIWorker: WeatherDetailsPageAPIWorkerProtocol {
-    func downloadData(url: URL, completionHandler: @escaping (Data?, Swift.Error?) -> Void) {
-        let request = URLRequest(url: url)
-        session.dataTask(with: request, completionHandler: { (data, response, error) in
-            DispatchQueue.main.async {
-                completionHandler(data, error)
-            }
 
-            }).resume()
-    }
-    
-    let session: URLSession
+    let network: NetworkProtocol
 
-    init(session: URLSession = URLSession.shared) {
-        self.session = session
+    init(network: NetworkProtocol = URLSession.shared) {
+        self.network = network
     }
 
     func fetchWeatherDetails(location: Location, numberOfDays: Int, completionHandler: @escaping (Response.WeatherData?, Swift.Error?) -> Void) {
@@ -31,7 +22,7 @@ class WeatherDetailsPageAPIWorker: WeatherDetailsPageAPIWorkerProtocol {
             return
         }
         let request = URLRequest(url: url)
-        session.dataTask(with: request) { (data, response, error) in
+        network.downloadData(request: request) { (data, response, error) in
             var weatherData: Response.WeatherData? = nil
             var returnError = error
             if let data = data {
@@ -44,9 +35,18 @@ class WeatherDetailsPageAPIWorker: WeatherDetailsPageAPIWorkerProtocol {
             DispatchQueue.main.async {
                 completionHandler(weatherData, returnError)
             }
-        }.resume()
 
-        
+        }
     }
-        
+
+    func downloadData(url: URL, completionHandler: @escaping (Data?, Swift.Error?) -> Void) {
+        let request = URLRequest(url: url)
+        network.downloadData(request: request, completionHandler: { (data, response, error) in
+            DispatchQueue.main.async {
+                completionHandler(data, error)
+            }
+        })
+    }
+
+
 }

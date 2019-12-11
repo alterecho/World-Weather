@@ -10,10 +10,10 @@ import Foundation
 
 class SearchPageAPIWorker: SearchPageAPIWorkerProtocol {
 
-    private let session: URLSession
+    private let network: NetworkProtocol
     
-    required init(session: URLSession = URLSession.shared) {
-        self.session = session
+    required init(network: NetworkProtocol = URLSession.shared) {
+        self.network = network
     }
 
     func fetchSearchResults(for searchString: String, noOfResults: Int, completionHandler: @escaping (Response.Search?, Swift.Error?) -> Void) {
@@ -24,7 +24,7 @@ class SearchPageAPIWorker: SearchPageAPIWorkerProtocol {
         }
         
         let request = URLRequest(url: url)
-        session.dataTask(with: request) { (data, response, error) in
+        network.downloadData(request: request) { (data, response, error) in
             if let data = data {
                 do {
                     let searchResponse = try JSONDecoder().decode(Response.Search.self, from: data)
@@ -41,7 +41,7 @@ class SearchPageAPIWorker: SearchPageAPIWorkerProtocol {
                     completionHandler(nil, error)
                 }
             }
-        }.resume()
+        }
 
     }
 
