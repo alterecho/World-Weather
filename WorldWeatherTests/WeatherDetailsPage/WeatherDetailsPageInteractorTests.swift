@@ -53,7 +53,7 @@ extension WeatherDetailsPageInteractorTests:  WeatherDetailsPageInteractorOutput
 }
 
 private class MockAPIWorker: WeatherDetailsPageAPIWorkerProtocol {
-    func downloadData(url: URL, completionHandler: @escaping (Data?, Error?) -> Void) {
+    func downloadData(url: URL, completionHandler: @escaping (Data?, Swift.Error?) -> Void) {
     }
 
     func fetchWeatherDetails(location: Location, numberOfDays: Int, completionHandler: @escaping (Response.WeatherData?, Swift.Error?) -> Void) {
