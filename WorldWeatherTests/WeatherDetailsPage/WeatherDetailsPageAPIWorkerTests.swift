@@ -33,11 +33,11 @@ class WeatherDetailsPageAPIWorkerTests: WeatherTestsBaseClass {
         waitForExpectations(timeout: 2.0, handler: nil)
     }
 
-    func testThatWeatheDetailsAreFetched() {
+    func testThatWeatherDetailsAreFetched() {
         let expectation = self.expectation(description: "weather is fetched expectation")
         mockNetwork?.filename = "mock-weather.json"
         apiWorker?.fetchWeatherDetails(location: Location(latitude: 0, Longitude: 0), numberOfDays: 1, completionHandler: { (weatherDataResponse, error) in
-            if let weatherDataResponse = weatherDataResponse {
+            if let _ = weatherDataResponse {
                 expectation.fulfill()
             } else {
                 XCTFail(error?.localizedDescription ?? "failed fetching weather")
