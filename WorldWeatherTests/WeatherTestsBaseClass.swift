@@ -22,7 +22,7 @@ class WeatherTestsBaseClass: XCTestCase {
         return try Response.WeatherData(data: data)
     }
 
-    func mockArea(count: Int = 1) -> [Area] {
+    func mockAreaArray(count: Int = 1) -> [Area] {
         var array = [Area]()
 
         for i in 0..<count {

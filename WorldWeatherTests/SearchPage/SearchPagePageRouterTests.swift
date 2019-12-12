@@ -35,7 +35,7 @@ class SearchPagePageRouterTests: WeatherTestsBaseClass {
 
     func testRoutingToDetailsPage() {
 //        goesToDetailsPageExpectation = expectation(description: "go to details page")
-        if let area = mockArea().first {
+        if let area = mockAreaArray().first {
             router?.gotoWeatherDetails(area: area)
 //            waitForExpectations(timeout: 2.0, handler: nil)
         } else {

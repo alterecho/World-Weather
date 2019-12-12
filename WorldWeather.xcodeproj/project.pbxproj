@@ -16,6 +16,8 @@
 		F133DA0423A2789900383765 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1CAD33023994FC500670B1C /* Main.storyboard */; };
 		F133DA0523A2789900383765 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1CAD33023994FC500670B1C /* Main.storyboard */; };
 		F133DA0B23A27D4700383765 /* WeatherDetailsPageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F133DA0A23A27D4700383765 /* WeatherDetailsPageViewControllerTests.swift */; };
+		F133DA0D23A2883800383765 /* SearchPagePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F133DA0C23A2883800383765 /* SearchPagePresenterTests.swift */; };
+		F133DA0F23A28B8100383765 /* SearchPageMappingWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F133DA0E23A28B8100383765 /* SearchPageMappingWorkerTests.swift */; };
 		F13FB92323A1507F000B6358 /* WeatherDetailsPageAPIWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13FB92223A1507F000B6358 /* WeatherDetailsPageAPIWorkerTests.swift */; };
 		F13FB92523A153DD000B6358 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13FB92423A153DD000B6358 /* NetworkProtocol.swift */; };
 		F13FB92723A15D81000B6358 /* MockNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13FB92623A15D81000B6358 /* MockNetwork.swift */; };
@@ -103,6 +105,8 @@
 		F133D9FE23A2346E00383765 /* MockViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewControllerDelegate.swift; sourceTree = "<group>"; };
 		F133DA0023A236CB00383765 /* StoryboardIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIDs.swift; sourceTree = "<group>"; };
 		F133DA0A23A27D4700383765 /* WeatherDetailsPageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsPageViewControllerTests.swift; sourceTree = "<group>"; };
+		F133DA0C23A2883800383765 /* SearchPagePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPagePresenterTests.swift; sourceTree = "<group>"; };
+		F133DA0E23A28B8100383765 /* SearchPageMappingWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageMappingWorkerTests.swift; sourceTree = "<group>"; };
 		F13FB92223A1507F000B6358 /* WeatherDetailsPageAPIWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsPageAPIWorkerTests.swift; sourceTree = "<group>"; };
 		F13FB92423A153DD000B6358 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
 		F13FB92623A15D81000B6358 /* MockNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetwork.swift; sourceTree = "<group>"; };
@@ -381,7 +385,9 @@
 			isa = PBXGroup;
 			children = (
 				F1E65D4A239DBF8000AC289F /* SearchPageInteractorTests.swift */,
+				F133DA0C23A2883800383765 /* SearchPagePresenterTests.swift */,
 				F13FB92823A15E4E000B6358 /* SearchPageAPIWorkerTests.swift */,
+				F133DA0E23A28B8100383765 /* SearchPageMappingWorkerTests.swift */,
 				F133D9FC23A229BA00383765 /* SearchPagePageRouterTests.swift */,
 			);
 			path = SearchPage;
@@ -575,8 +581,10 @@
 				F133D9FD23A229BA00383765 /* SearchPagePageRouterTests.swift in Sources */,
 				F13FB93023A1D039000B6358 /* AccesssibilityIDs.swift in Sources */,
 				F133DA0323A2399E00383765 /* StoryboardIDs.swift in Sources */,
+				F133DA0F23A28B8100383765 /* SearchPageMappingWorkerTests.swift in Sources */,
 				F169BAE9239EA4A000FE8DAC /* WeatherDetailsPageInteractorTests.swift in Sources */,
 				F1CAD34523994FC500670B1C /* ResponseDecodingTests.swift in Sources */,
+				F133DA0D23A2883800383765 /* SearchPagePresenterTests.swift in Sources */,
 				F13FB92323A1507F000B6358 /* WeatherDetailsPageAPIWorkerTests.swift in Sources */,
 				F1E65D49239D3C7500AC289F /* DataStoreTests.swift in Sources */,
 				F133DA0B23A27D4700383765 /* WeatherDetailsPageViewControllerTests.swift in Sources */,
