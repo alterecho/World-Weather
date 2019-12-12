@@ -6,6 +6,7 @@
 //  Copyright © 2019 v.a.jayachandran. All rights reserved.
 //
 
-class AccesssibilityIDs {
-    static let alertSystem = "AlertSystem"
+struct AccesssibilityIDs {
+    static let alertSystem = "alertSystem"
+    static let searchPageView = "searchPageView"
 }

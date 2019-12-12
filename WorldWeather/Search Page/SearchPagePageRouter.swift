@@ -19,14 +19,13 @@ class SearchPagePageRouter: SearchPagePageRouterProtocol {
     
     func gotoWeatherDetails(area: Area) {
         self.area = area
-        viewController?.performSegue(withIdentifier: SegueIDs.showWeatherDetails, sender: viewController)
-    }
 
-    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SegueIDs.showWeatherDetails {
-            if let destination = segue.destination as? WeatherDetailsPageViewController {
-                destination.area = area
-            }
+        if let detailsPageViewController = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: StoryboardIDs.weatherDetailsPage)
+            as? WeatherDetailsPageViewController {
+            detailsPageViewController.area = area
+            viewController?.navigationController?.pushViewController(detailsPageViewController, animated: true)
+
         }
     }
 }

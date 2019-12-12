@@ -30,6 +30,7 @@ class SearchPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.accessibilityIdentifier = AccesssibilityIDs.searchPageView
         SearchPageConfigurator().configure(viewController: self)
         tableView.register(CitiesTableCell.self, forCellReuseIdentifier: SearchPageViewController.cellID)
     }
@@ -37,10 +38,6 @@ class SearchPageViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         output?.load()
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        router?.prepare(for: segue, sender: sender)
     }
 }
 

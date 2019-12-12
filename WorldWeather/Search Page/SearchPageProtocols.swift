@@ -37,5 +37,4 @@ protocol SearchPageMappingWorkerProtocol {
 
 protocol SearchPagePageRouterProtocol {
     func gotoWeatherDetails(area: Area)
-    func prepare(for segue: UIStoryboardSegue, sender: Any?)
 }

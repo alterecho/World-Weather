@@ -9,7 +9,7 @@
 import XCTest
 @testable import WorldWeather
 
-class WeatherDetailsPageInteractorTests: XCTestCase {
+class WeatherDetailsPageInteractorTests: WeatherTestsBaseClass {
     private var interactor: WeatherDetailsPageInteractor?
     var presentWeatherExpectation: XCTestExpectation?
     var showLoadingExpectation: XCTestExpectation?
@@ -29,7 +29,7 @@ class WeatherDetailsPageInteractorTests: XCTestCase {
 
         let area = Area(areaName: "area", country: "country", region: "region", latitude: 0.0, longitude: 0.0, weatherUrl: nil)
         interactor?.load(area: area)
-
+        
         waitForExpectations(timeout: 2.0, handler: nil)
     }
 }

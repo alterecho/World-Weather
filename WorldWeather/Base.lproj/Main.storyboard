@@ -11,7 +11,7 @@
         <!--Search Page View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SearchPageViewController" customModule="WorldWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchPageViewController" id="BYZ-38-t0r" customClass="SearchPageViewController" customModule="WorldWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,7 +69,7 @@
         <!--Weather Details Page View Controller-->
         <scene sceneID="CEg-Av-kJp">
             <objects>
-                <viewController id="aLp-MQ-fEk" customClass="WeatherDetailsPageViewController" customModule="WorldWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeatherDetailsPageViewController" id="aLp-MQ-fEk" customClass="WeatherDetailsPageViewController" customModule="WorldWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wpP-pa-SpK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

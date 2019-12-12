@@ -9,6 +9,8 @@
 import Foundation
 @testable import WorldWeather
 
+
+/// Retrieves data from the file specified in the filename property, regardless of the URL passed
 class MockNetwork: NetworkProtocol {
     var filename: String?
     func downloadData(request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Swift.Error?) -> Void) {
