@@ -13,7 +13,7 @@ protocol WeatherDetailsPageInteractorInput {
 }
 
 protocol WeatherDetailsPageInteractorOutput: PageProtocols {
-    func present(weather: WeatherModel)
+    func present(weather: WeatherModel?)
 }
 
 protocol WeatherDetailsPagePresenterOutput: class, PageProtocols {

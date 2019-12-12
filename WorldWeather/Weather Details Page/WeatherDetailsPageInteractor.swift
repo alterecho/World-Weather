@@ -14,7 +14,8 @@ class WeatherDetailsPageInteractor: WeatherDetailsPageInteractorInput {
     private let apiWorker: WeatherDetailsPageAPIWorkerProtocol
     private let mappingWorker = WeatherDetailsPageMappingWorker()
 
-    init(output: WeatherDetailsPageInteractorOutput, apiWorker: WeatherDetailsPageAPIWorkerProtocol = WeatherDetailsPageAPIWorker()) {
+    init(output: WeatherDetailsPageInteractorOutput,
+         apiWorker: WeatherDetailsPageAPIWorkerProtocol = WeatherDetailsPageAPIWorker()) {
         self.apiWorker = apiWorker
         self.output = output
     }
@@ -38,13 +39,13 @@ class WeatherDetailsPageInteractor: WeatherDetailsPageInteractorInput {
                                     print(error)
                                 }
                             }
-
                             self?.output.present(weather: weatherDetails)
                         }
                     } else {
                         self?.output.present(weather: weatherDetails)
                     }
                 } else {
+                    self?.output.present(weather: nil)
                     AlertSystem.alert(title: "Error", message: "Unable to map weather response")
                 }
 

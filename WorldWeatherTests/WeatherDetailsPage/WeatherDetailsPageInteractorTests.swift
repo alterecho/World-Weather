@@ -20,7 +20,7 @@ class WeatherDetailsPageInteractorTests: WeatherTestsBaseClass {
         interactor = WeatherDetailsPageInteractor(output: self, apiWorker: apiWorker)
     }
 
-    func testThatPresntMethodIsCalled() {
+    func testThatPresentMethodIsCalled() {
         presentWeatherExpectation = self.expectation(description: "does present weather details expectation")
 
         showLoadingExpectation = self.expectation(description: "does show loading expectation")
@@ -39,7 +39,7 @@ extension WeatherDetailsPageInteractorTests:  WeatherDetailsPageInteractorOutput
         
     }
 
-    func present(weather: WeatherModel) {
+    func present(weather: WeatherModel?) {
         presentWeatherExpectation?.fulfill()
     }
 
@@ -54,6 +54,9 @@ extension WeatherDetailsPageInteractorTests:  WeatherDetailsPageInteractorOutput
 
 private class MockAPIWorker: WeatherDetailsPageAPIWorkerProtocol {
     func downloadData(url: URL, completionHandler: @escaping (Data?, Swift.Error?) -> Void) {
+        DispatchQueue.main.async {
+            completionHandler(nil, nil)
+        }
     }
 
     func fetchWeatherDetails(location: Location, numberOfDays: Int, completionHandler: @escaping (Response.WeatherData?, Swift.Error?) -> Void) {
