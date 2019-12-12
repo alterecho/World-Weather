@@ -13,19 +13,19 @@ class WeatherDetailsPageViewController: UIViewController {
 
     @IBOutlet weak var weatherIconImageViewYConstraint: NSLayoutConstraint!
 
-    @IBOutlet weak var temperatureLabel: UILabel!
-    @IBOutlet weak var weatherDescriptionLabel: UILabel!
-    @IBOutlet weak var humidityLabel: UILabel!
-    @IBOutlet weak var weatherIconImageView: UIImageView!
-    @IBOutlet weak var loadIndicator: LoadIndicator!
+    @IBOutlet weak var temperatureLabel: UILabel?
+    @IBOutlet weak var weatherDescriptionLabel: UILabel?
+    @IBOutlet weak var humidityLabel: UILabel?
+    @IBOutlet weak var weatherIconImageView: UIImageView?
+    @IBOutlet weak var loadIndicator: LoadIndicator?
 
     var output: WeatherDetailsPageInteractorInput?
 
     private var vm: WeatherDetailsPageViewModel? {
         didSet {
-            temperatureLabel.text = vm?.temperatureLabelText
-            weatherDescriptionLabel.text = vm?.weatherDescriptionLabelText
-            humidityLabel.text = vm?.humidityLabelText
+            temperatureLabel?.text = vm?.temperatureLabelText
+            weatherDescriptionLabel?.text = vm?.weatherDescriptionLabelText
+            humidityLabel?.text = vm?.humidityLabelText
 
             //TODO: implement image downloading
             if let url = vm?.weatherIcon {
@@ -34,17 +34,22 @@ class WeatherDetailsPageViewController: UIViewController {
                     do {
                         let data = try Data(contentsOf: url)
                         DispatchQueue.main.async {
-                            self.weatherIconImageView.image = UIImage(data: data)
+                            self.weatherIconImageView?.image = UIImage(data: data)
                         }
                     } catch {
                         print(error)
                     }
                 }
             } else {
-                weatherIconImageView.image = nil
+                weatherIconImageView?.image = nil
             }
             self.animate()
         }
+    }
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        WeatherDetailsPageConfigurator().configure(viewController: self)
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -86,10 +91,10 @@ class WeatherDetailsPageViewController: UIViewController {
 
     private func resetForAnimation() {
         // set initial values for animation
-        weatherIconImageViewYConstraint.constant = -weatherIconImageView.frame.height
-        self.temperatureLabel.alpha = 0.0
-        self.weatherDescriptionLabel.alpha = 0.0
-        self.humidityLabel.alpha = 0.0
+        weatherIconImageViewYConstraint.constant = weatherIconImageView?.frame.height ?? 0.0
+        self.temperatureLabel?.alpha = 0.0
+        self.weatherDescriptionLabel?.alpha = 0.0
+        self.humidityLabel?.alpha = 0.0
 
     }
 
@@ -97,17 +102,17 @@ class WeatherDetailsPageViewController: UIViewController {
         resetForAnimation()
         view.layoutIfNeeded()
         self.weatherIconImageViewYConstraint.constant = 100.0
-        weatherIconImageView.needsUpdateConstraints()
+        weatherIconImageView?.needsUpdateConstraints()
 
         UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 12.0, initialSpringVelocity: 12.0, options: .curveEaseIn, animations: {
             self.view.layoutIfNeeded()
         }) { (completed) in
             UIView.animate(withDuration: 0.375, animations: {
-                self.temperatureLabel.alpha = 1.0
+                self.temperatureLabel?.alpha = 1.0
             }) { (completed) in
                 UIView.animate(withDuration: 0.75, animations: {
-                    self.weatherDescriptionLabel.alpha = 1.0
-                    self.humidityLabel.alpha = 1.0
+                    self.weatherDescriptionLabel?.alpha = 1.0
+                    self.humidityLabel?.alpha = 1.0
                 })
             }
         }
@@ -122,11 +127,11 @@ extension WeatherDetailsPageViewController: WeatherDetailsPagePresenterOutput {
     }
     
     func showLoading() {
-        loadIndicator.isLoading = true
+        loadIndicator?.isLoading = true
     }
 
     func hideLoading() {
-        loadIndicator.isLoading = false
+        loadIndicator?.isLoading = false
     }
 
     func display(vm: WeatherDetailsPageViewModel) {
