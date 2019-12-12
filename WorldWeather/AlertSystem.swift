@@ -21,15 +21,18 @@ public class AlertSystem {
                 window = UIWindow(windowScene: scene)
             } else {
                 print("ERROR FINDING FOREGROUND SCENE")
+                window = UIWindow(frame: UIScreen.main.bounds)
             }
         } else {
             window = UIWindow(frame: UIScreen.main.bounds)
         }
+        
 
         let viewController = UIViewController()
 
         let alertViewController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertVC = alertViewController
+        alertVC?.view.accessibilityIdentifier = AccesssibilityIDs.alertSystem
 
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
             window = nil
