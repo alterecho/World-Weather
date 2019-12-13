@@ -9,7 +9,11 @@
 import UIKit
 
 class LoadIndicator: UIView {
-    let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+    let activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+        activityIndicator.accessibilityIdentifier = AccesssibilityIDs.loadIndicator
+        return activityIndicator
+    }()
 
     var isLoading: Bool = false {
         didSet {

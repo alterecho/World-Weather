@@ -8,4 +8,5 @@
 
 class LaunchArgs {
     static let testAlert = "testAlert"
+    static let testLoadIndicator = "testLoadIndicator"
 }

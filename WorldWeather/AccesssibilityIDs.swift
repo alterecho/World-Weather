@@ -9,4 +9,5 @@
 struct AccesssibilityIDs {
     static let alertSystem = "alertSystem"
     static let searchPageView = "searchPageView"
+    static let loadIndicator = "loadIndicator"
 }

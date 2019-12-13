@@ -30,6 +30,6 @@ class AlertSystemTests: XCTestCase {
 
         let query = application?.alerts[AccesssibilityIDs.alertSystem]
         XCTAssert(query?.waitForExistence(timeout: 5.0) ?? false)
-
+        
     }
 }

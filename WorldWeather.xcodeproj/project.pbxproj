@@ -18,6 +18,10 @@
 		F133DA0B23A27D4700383765 /* WeatherDetailsPageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F133DA0A23A27D4700383765 /* WeatherDetailsPageViewControllerTests.swift */; };
 		F133DA0D23A2883800383765 /* SearchPagePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F133DA0C23A2883800383765 /* SearchPagePresenterTests.swift */; };
 		F133DA0F23A28B8100383765 /* SearchPageMappingWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F133DA0E23A28B8100383765 /* SearchPageMappingWorkerTests.swift */; };
+		F133DA1123A28E9900383765 /* LoadIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F133DA1023A28E9900383765 /* LoadIndicatorTests.swift */; };
+		F133DA1223A305E800383765 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D0B239B770600AC289F /* Helpers.swift */; };
+		F133DA1423A3068100383765 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E65D08239B757700AC289F /* Errors.swift */; };
+		F133DA1623A30FDD00383765 /* LaunchArgsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F133DA1523A30FDD00383765 /* LaunchArgsHandler.swift */; };
 		F13FB92323A1507F000B6358 /* WeatherDetailsPageAPIWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13FB92223A1507F000B6358 /* WeatherDetailsPageAPIWorkerTests.swift */; };
 		F13FB92523A153DD000B6358 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13FB92423A153DD000B6358 /* NetworkProtocol.swift */; };
 		F13FB92723A15D81000B6358 /* MockNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13FB92623A15D81000B6358 /* MockNetwork.swift */; };
@@ -107,6 +111,8 @@
 		F133DA0A23A27D4700383765 /* WeatherDetailsPageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsPageViewControllerTests.swift; sourceTree = "<group>"; };
 		F133DA0C23A2883800383765 /* SearchPagePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPagePresenterTests.swift; sourceTree = "<group>"; };
 		F133DA0E23A28B8100383765 /* SearchPageMappingWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageMappingWorkerTests.swift; sourceTree = "<group>"; };
+		F133DA1023A28E9900383765 /* LoadIndicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadIndicatorTests.swift; sourceTree = "<group>"; };
+		F133DA1523A30FDD00383765 /* LaunchArgsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchArgsHandler.swift; sourceTree = "<group>"; };
 		F13FB92223A1507F000B6358 /* WeatherDetailsPageAPIWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsPageAPIWorkerTests.swift; sourceTree = "<group>"; };
 		F13FB92423A153DD000B6358 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
 		F13FB92623A15D81000B6358 /* MockNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetwork.swift; sourceTree = "<group>"; };
@@ -232,13 +238,14 @@
 		F1CAD32923994FC500670B1C /* WorldWeather */ = {
 			isa = PBXGroup;
 			children = (
+				F13FB93223A1D360000B6358 /* LaunchArgs.swift */,
 				F1CAD32A23994FC500670B1C /* AppDelegate.swift */,
+				F133DA1523A30FDD00383765 /* LaunchArgsHandler.swift */,
 				F1CAD32C23994FC500670B1C /* SceneDelegate.swift */,
 				F1E65D0B239B770600AC289F /* Helpers.swift */,
 				F1E65D28239C1A2D00AC289F /* SegueIDs.swift */,
 				F13FB92E23A1CFFF000B6358 /* AccesssibilityIDs.swift */,
 				F133DA0023A236CB00383765 /* StoryboardIDs.swift */,
-				F13FB93223A1D360000B6358 /* LaunchArgs.swift */,
 				F1E65D23239C049600AC289F /* API.swift */,
 				F1E65D42239CFA5B00AC289F /* AlertSystem.swift */,
 				F1E65D44239D219A00AC289F /* LoadIndicator.swift */,
@@ -281,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				F13FB92C23A1CE4F000B6358 /* AlertSystemTests.swift */,
+				F133DA1023A28E9900383765 /* LoadIndicatorTests.swift */,
 				F133D9FA23A2269300383765 /* NavigationTests.swift */,
 				F1CAD35123994FC500670B1C /* Info.plist */,
 			);
@@ -552,6 +560,7 @@
 				F1E65D29239C1A2D00AC289F /* SegueIDs.swift in Sources */,
 				F1E65D43239CFA5B00AC289F /* AlertSystem.swift in Sources */,
 				F1E65D41239CF16B00AC289F /* WeatherDetailsPageMappingWorker.swift in Sources */,
+				F133DA1623A30FDD00383765 /* LaunchArgsHandler.swift in Sources */,
 				F133DA0123A236CB00383765 /* StoryboardIDs.swift in Sources */,
 				F1CAD32B23994FC500670B1C /* AppDelegate.swift in Sources */,
 				F1E65D2B239CA0C100AC289F /* WeatherDetailsPageProtocols.swift in Sources */,
@@ -577,6 +586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1E65D0A239B764100AC289F /* Errors.swift in Sources */,
+				F133DA1223A305E800383765 /* Helpers.swift in Sources */,
 				F13FB93923A1DB3C000B6358 /* WeatherDetailsPageConfiguratorTests.swift in Sources */,
 				F133D9FD23A229BA00383765 /* SearchPagePageRouterTests.swift in Sources */,
 				F13FB93023A1D039000B6358 /* AccesssibilityIDs.swift in Sources */,
@@ -606,6 +616,8 @@
 				F133D9FB23A2269300383765 /* NavigationTests.swift in Sources */,
 				F13FB93123A1D039000B6358 /* AccesssibilityIDs.swift in Sources */,
 				F13FB92D23A1CE4F000B6358 /* AlertSystemTests.swift in Sources */,
+				F133DA1423A3068100383765 /* Errors.swift in Sources */,
+				F133DA1123A28E9900383765 /* LoadIndicatorTests.swift in Sources */,
 				F133DA0223A2399D00383765 /* StoryboardIDs.swift in Sources */,
 				F13FB93523A1D3A6000B6358 /* LaunchArgs.swift in Sources */,
 			);

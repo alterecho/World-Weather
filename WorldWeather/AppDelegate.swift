@@ -14,16 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        if ProcessInfo.processInfo.arguments.contains(LaunchArgs.testAlert) {
-
-            // on iOS 13 and above, there are no connected scenes immediately at this point
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                AlertSystem.alert(title: "test", message: "alert")
-            }
-
-        }
-
+        LaunchArgsHandler.handleArgs()
         return true
     }
 }
